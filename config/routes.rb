@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :drivers, only: [:index, :show]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :materials, only: [:index, :show]
+  resources :materials, only: [:index, :show] do
+    resources :suppliers, only: [:index, :show]
+  end
   # Defines the root path route ("/")
   # root "articles#index"
 end
