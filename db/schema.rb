@@ -10,9 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_140754) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_135732) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "vehicle_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "description"
+    t.integer "price"
+    t.integer "length"
+    t.integer "width"
+    t.integer "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "suppliers_id"
+    t.index ["suppliers_id"], name: "index_materials_on_suppliers_id"
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.bigint "material_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["material_id"], name: "index_suppliers_on_material_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +57,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_140754) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "suppliers", "materials"
 end

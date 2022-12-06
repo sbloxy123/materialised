@@ -49,8 +49,9 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 
 #use faker
-gem install faker
+gem "faker"
 
+# gem 'bootstrap-sass'
 gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
@@ -79,3 +80,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'bootstrap', '~> 5.2.2'
+gem 'sass-rails'
