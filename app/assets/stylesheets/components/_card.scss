@@ -1,0 +1,26 @@
+.card-border{
+  border: 1px solid rgb(192, 189, 189);
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#img-test{
+  width: 45%;
+  max-height: 125px;
+}
+
+.name-desc{
+  width: 45%;
+}
+
+p{
+  display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
+     overflow: hidden;
+}
+
+.space-between{
+  justify-content: space-between;
+}
