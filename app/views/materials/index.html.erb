@@ -1,0 +1,12 @@
+<h1>Materials#index</h1>
+
+<div class="container">
+  <% @materials.each do |material| %>
+    <div class="container card-border">
+      <%= "#{material.name}" %>
+      <%= "#{material.description}" %>
+      <%= "#{material.price}" %>
+      <%= link_to "View details", material_path(material) %>
+    </div>
+  <% end %>
+</div>
