@@ -1,0 +1,10 @@
+<h1>Drivers</h1>
+
+<% @drivers.each do |driver| %>
+  <div class="driver">
+    <h2><%= driver.name %></h2>
+    <p><%= driver.email %></p>
+
+    <%= link_to "View driver", driver_path(driver) %>
+  </div>
+<% end %>
