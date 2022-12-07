@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_133442) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,8 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
     t.bigint "material_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "materials_id", null: false
     t.integer "quantity"
     t.index ["material_id"], name: "index_baskets_on_material_id"
+    t.index ["materials_id"], name: "index_baskets_on_materials_id"
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -42,18 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
     t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "supplier_id"
-    t.index ["supplier_id"], name: "index_materials_on_supplier_id"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.string "site_location"
-    t.bigint "driver_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["driver_id"], name: "index_orders_on_driver_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
+    t.bigint "suppliers_id"
+    t.index ["suppliers_id"], name: "index_materials_on_suppliers_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -86,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
   end
 
   add_foreign_key "baskets", "materials"
+  add_foreign_key "baskets", "materials", column: "materials_id"
   add_foreign_key "orders", "drivers"
   add_foreign_key "orders", "users"
 end
