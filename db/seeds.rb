@@ -8,14 +8,15 @@
 # db/seeds.rb
 require "open-uri"
 puts "Cleaning database..."
-User.destroy_all
-Driver.destroy.all
-materials.destroy.all
+# User.destroy_all
+Driver.destroy_all
+Material.destroy_all
+Supplier.destroy_all
 require 'faker'
 
 puts 'users...'
-user_first = User.new(name: "john", email: "john12@gmail.com", id: 1)
-user_first.save!
+# user_first = User.new(email: "john12@gmail.com", id: 1)
+# user_first.save!
 # puts 'orders...'
 # order_first = Order.new(order: "", site_location: "london", driver_id: 1, user_id: 1)
 # order_first.save!
@@ -24,11 +25,11 @@ user_first.save!
 # order_third = Order.new(order: "", site_location:"BEXLEY", driver_id: 3, user_id: 1)
 # order_third.save!
 puts 'Drivers...'
-driver_one = Driver.new(name: "tim", location:, vehicle_type: "Medium truck")
+driver_one = Driver.new(name: "tim", location:"london", vehicle_type: "Medium truck")
 driver_one.save!
-driver_second = Driver.new(name: "william", location:, vehicle_type: "Large truck")
+driver_second = Driver.new(name: "william", location: "DARTFORD", vehicle_type: "Large truck")
 driver_second.save!
-driver_third = Driver.new(name: "bill", vehicle_type: "Moped ")
+driver_third = Driver.new(name: "bill",location: "Bexley", vehicle_type: "truck ")
 driver_third.save!
 
 # puts 'order_materials...'
@@ -58,11 +59,11 @@ electrical_second.save!
 electrical_third = Material.new(name: "electrical cables", category: "electrical", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), supplier_id: 3)
 electrical_third.save!
 
-puts 'supplier...'
-supplier_one = Supplier.new(name: "Faker::Name.supplier_name", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
-supplier_one.save!
-supplier_second = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
-supplier_second.save!
-supplier_third = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
-supplier_third.save!
-puts 'Finished!'
+# puts 'suppliers...'
+# supplier_one = Supplier.new(name: "Faker::Name.supplier_name", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
+# supplier_one.save!
+# supplier_second = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
+# supplier_second.save!
+# supplier_third = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
+# supplier_third.save!
+# puts 'Finished!'
