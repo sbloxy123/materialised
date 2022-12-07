@@ -11,7 +11,6 @@ class MaterialsController < ApplicationController
     @material = Material.find(params[:id])
   end
 
-
   private
 
   def material_params
