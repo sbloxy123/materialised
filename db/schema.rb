@@ -24,16 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_163505) do
     t.integer "rating"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string "site_location"
-    t.bigint "driver_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["driver_id"], name: "index_orders_on_driver_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
   create_table "materials", force: :cascade do |t|
     t.string "name"
     t.string "category"
@@ -46,6 +36,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_163505) do
     t.datetime "updated_at", null: false
     t.bigint "suppliers_id"
     t.index ["suppliers_id"], name: "index_materials_on_suppliers_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "site_location"
+    t.bigint "driver_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["driver_id"], name: "index_orders_on_driver_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
