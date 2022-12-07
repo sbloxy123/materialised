@@ -1,0 +1,67 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.first-div {
+  width: 45%;
+  height: 600px;
+  padding: 40px 0 40px 80px;
+  background-color: white;
+  font-size: 18px;
+  color: black;
+  z-index: 2;
+}
+
+.header-one-div {
+  width: 700px;
+
+  h1 {
+  text-align: start;
+  font-weight: bold;
+  }
+}
+
+.search-bar-button-div {
+  margin-top: 40px;
+
+}
+
+.header-two-p-div {
+  margin-top: 50px;
+  width: 500px;
+
+  h2 {
+  font-size: 24px;
+  font-weight: bold;
+  }
+}
+
+
+.second-div {
+  width: 25%;
+  height: 600px;
+  padding: 20px;
+  background-color: white;
+  font-size: 18px;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.third-div {
+  width: 15%;
+  height: 600px;
+  background-color: white;
+  z-index: 2;
+
+  .truck-image {
+    width: 440px;
+  }
+}
+
+.fourth-div {
+  width: 15%;
+  height: 600px;
+  background-color: white;
+  z-index: 1;
+}
