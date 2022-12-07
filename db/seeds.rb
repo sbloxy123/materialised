@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 73895141711a927486d61616b1586e4df532de4d
 # db/seeds.rb
 require "open-uri"
 puts "Cleaning database..."
@@ -68,6 +72,10 @@ electrical_third.save!
 # supplier_third = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
 # supplier_third.save!
 # puts 'Finished!'
+<<<<<<< HEAD
 =======
 
 >>>>>>> eb5c19586eb9402971cd3e16290229e3d4e643c9
+=======
+
+>>>>>>> 73895141711a927486d61616b1586e4df532de4d

@@ -1,7 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<button class="orange-button">Shop Now</button>
 
+<div class="flex-container">
+  <div class="first-div">
+    <div class="header-one-div">
+      <h1> Construction materials delivered same day, with a promise</h1>
+    </div>
+
+    <div class="search-bar-button-div">
+      <%= form_with url: materials_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-bar-home",
+          placeholder: "SEARCH FOR PRODUCT OR CATEGORY..."
+        %>
+      <% end %>
+      <button class="orange-button">Shop Now</button>
+    </div>
+
+    <div class="header-two-p-div">
+      <h2>WE HAVE ACHIEVED THIS IN 5 YEARS WITH HARD WORK</h2>
+      <p>voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+    </div>
+
+  </div>
+  <div class="second-div">
+    <p>second</p>
+  </div>
+  <div class="third-div">
+    <%= image_tag "truck.jpg", class: "truck-image" %>
+  </div>
+  <div class="fourth-div">
+  </div>
+</div>
 <div class="container">
   <h2>Categories</h2>
     <% categories = [] %>
@@ -13,7 +42,7 @@
         <div class="category-card">
           <img src="https://media.wickes.co.uk/is/image/wickes/GPID_1100377536_00?$normal$" alt="material">
         <hr>
-          <p><%= category %></p>
+          <p><%=link_to "#{category}", materials_path(:query => "#{category}") %></p>
         </div>
       <% end %>
     </div>
