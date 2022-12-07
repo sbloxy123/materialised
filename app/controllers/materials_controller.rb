@@ -1,7 +1,7 @@
 class MaterialsController < ApplicationController
   def index
     if params[:query].present?
-      @materials = Material.where(category: params[:query])
+      @materials = Material.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @materials = Material.all
     end
