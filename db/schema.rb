@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_171541) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baskets", force: :cascade do |t|
+    t.bigint "material_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "quantity"
+    t.index ["material_id"], name: "index_baskets_on_material_id"
+  end
 
   create_table "drivers", force: :cascade do |t|
     t.string "name"
@@ -20,6 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
     t.string "vehicle_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "plate_number"
+    t.integer "rating"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -34,6 +46,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
     t.datetime "updated_at", null: false
     t.bigint "supplier_id"
     t.index ["supplier_id"], name: "index_materials_on_supplier_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "site_location"
+    t.bigint "driver_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["driver_id"], name: "index_orders_on_driver_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
@@ -54,5 +76,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+  
+  add_foreign_key "baskets", "materials"
+  add_foreign_key "orders", "drivers"
+  add_foreign_key "orders", "users"
+  add_foreign_key "suppliers", "materials"
 
 end

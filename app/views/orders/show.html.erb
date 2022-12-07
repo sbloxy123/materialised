@@ -1,0 +1,29 @@
+<div class="modal-card">
+<h1 class><%= @order.user.name %>, here is your order:</h1>
+
+ <div class="map-container">
+  <iframe id="inlineFrameExample"
+    title="Inline Frame Example"
+    width="300"
+    height="200"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+  </iframe>
+</div>
+
+<div class="avatar-container">
+  <div class="image-text-container">
+    <%= image_tag "sample.jpg", class: "avatar-large" %>
+    <div class="small-box-avatar">
+    <p><%= @order.driver.rating %></p>
+    <p><%= @order.driver.name %></p>
+    </div>
+  </div>
+  <div class="image-text-container">
+    <%= image_tag "sample.jpg", class: "avatar-large" %>
+    <div class="small-box-avatar">
+    <p><%= @order.driver.plate_number %></p>
+    <p><%= @order.driver.vehicle_type %></p>
+    </div>
+  </div>
+</div>
+</div>
