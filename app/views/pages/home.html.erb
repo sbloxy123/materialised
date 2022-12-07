@@ -13,7 +13,7 @@
         <div class="category-card">
           <img src="https://media.wickes.co.uk/is/image/wickes/GPID_1100377536_00?$normal$" alt="material">
         <hr>
-          <p><%= category %></p>
+          <p><%=link_to "#{category}", materials_path(:query => "#{category}") %></p>
         </div>
       <% end %>
     </div>
