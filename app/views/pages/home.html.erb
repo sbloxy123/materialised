@@ -1,4 +1,20 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-
 <button class="orange-button">Shop Now</button>
+
+<div class="container">
+  <h2>Categories</h2>
+    <% categories = [] %>
+    <% @materials.each do |material| %>
+      <% categories << material.category %>
+    <% end %>
+    <div id="index-grid">
+      <% categories.uniq.each do |category| %>
+        <div class="category-card">
+          <img src="https://media.wickes.co.uk/is/image/wickes/GPID_1100377536_00?$normal$" alt="material">
+        <hr>
+          <p><%= category %></p>
+        </div>
+      <% end %>
+    </div>
+</div>
