@@ -46,10 +46,7 @@
             <%= link_to "View details", material_path(item.material_id) %>
           </div>
         </div>
-        <% simple_form_for @basket_edit do |t| %>
-          <%= f.input :quantity %>
-          <%= f.button :submit %>
-        <% end %>
+
       </div>
     <% end %>
     </div>
