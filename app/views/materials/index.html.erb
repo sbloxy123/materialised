@@ -17,9 +17,9 @@
 
 <div class="container mt-5" id="index-grid">
   <% @materials.each do |material| %>
-    <div class="container card-border">
-      <div class="container d-flex gap-30 mt-5 pb-5 border-bottom">
-        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="" id="img-test">
+    <div class="container card-border card-size">
+      <div class="container d-flex gap-30 mt-5 pb-5 border-bottom mb-2">
+        <img src="https://images.unsplash.com/photo-1538474705339-e87de81450e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" id="img-test">
         <div class="name-des">
           <h5><%= "#{material.name}" %></h5>
           <p><%= "#{material.description}" %></p>
@@ -31,7 +31,7 @@
         <p>Vehicle image and type</p>
         </div>
         <div>
-          <p class="mt-2"><%= "#{material.price}" %></p>
+          <p class="mt-2 text-align-right"><%= "#{material.price}" %> <i class="fa-sharp fa-solid fa-euro-sign"></i></p>
           <%= link_to "View details", material_path(material) %>
         </div>
       </div>
