@@ -51,3 +51,9 @@
 
   </div>
 </div>
+
+<%= simple_form_for @basket do |f| %>
+  <%= hidden_field_tag :material, @material.id %>
+  <%= f.input :quantity, placeholder: "How many?" %>
+  <%= f.submit class: "btn btn-flat" %>
+<% end %>

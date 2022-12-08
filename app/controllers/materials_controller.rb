@@ -7,9 +7,10 @@ class MaterialsController < ApplicationController
     end
   end
 
+
   def show
     @material = Material.find(params[:id])
-    # @material.supplier = Supplier.find(params[:id])
+    @basket = Basket.new
   end
 
   private
