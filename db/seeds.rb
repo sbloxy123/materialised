@@ -68,3 +68,4 @@ electrical_third.save!
 # supplier_third = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
 # supplier_third.save!
 # puts 'Finished!'
+
