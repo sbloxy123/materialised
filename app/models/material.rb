@@ -1,4 +1,6 @@
 class Material < ApplicationRecord
+  # has_many :suppliers
+  has_many :baskets, dependent: :destroy
   has_many :material_suppliers
   has_many :suppliers, through: :material_suppliers
 
