@@ -21,7 +21,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active me-5">
-            <i class="fa-solid fa-cart-shopping navbar-links-color"></i><%= link_to "Checkout", "#", class: "nav-link d-inline navbar-links-color fw-bold fs-5" %>
+            <i class="fa-solid fa-cart-shopping navbar-links-color"></i><%= link_to "Checkout", baskets_path, class: "nav-link d-inline navbar-links-color fw-bold fs-5" %>
           </li>
           <li class="nav-item active">
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link d-inline navbar-links-color fw-bold fs-5" %>

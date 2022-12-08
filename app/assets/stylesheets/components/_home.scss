@@ -1,4 +1,4 @@
-.flex-container {
+.flex-container-one {
   display: flex;
   flex-direction: row;
 }
@@ -39,7 +39,7 @@
 
 
 .second-div {
-  width: 25%;
+  width: 20%;
   height: 600px;
   padding: 20px;
   background-color: white;
@@ -49,35 +49,14 @@
 }
 
 .third-div {
-  width: 15%;
+  width: 35%;
   height: 600px;
   background-color: white;
-  z-index: 2;
 
   .truck-image {
-    width: 440px;
+    height: 70%;
+    width: 100%;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   }
 }
 
-.fourth-div {
-  width: 15%;
-  height: 600px;
-  background-color: white;
-  z-index: 1;
-}
-
-    .footer {
-     display: flex;
-     justify-content: space-between;
-     padding: 30px 10px;
-     margin-top: 30px;
-
-
-   }
-
-    .logo {
-
-    width :100px;
-
-
-    }

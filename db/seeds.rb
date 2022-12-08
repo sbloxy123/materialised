@@ -5,11 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 73895141711a927486d61616b1586e4df532de4d
 # db/seeds.rb
 require "open-uri"
 puts "Cleaning database..."
@@ -45,23 +41,23 @@ driver_third.save!
 
 puts 'materials...'
 # puts 3.times do
-construction_first = Material.new(name: "timber", category: "Construction", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), supplier_id: 1)
+construction_first = Material.new(name: "timber", category: "Construction", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100))
 construction_first.save!
-construction_second = Material.new(name: "sheet materials", category: "Construction", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), supplier_id: 1)
+construction_second = Material.new(name: "sheet materials", category: "Construction", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100))
 construction_second.save!
-construction_third = Material.new(name: "roofing", category: "construction", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), supplier_id: 1)
+construction_third = Material.new(name: "roofing", category: "construction", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100))
 construction_third.save!
-plumbing_first = Material.new(name: "Decking", category: "Garden", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), supplier_id: 2)
+plumbing_first = Material.new(name: "Decking", category: "Garden", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100))
 plumbing_first.save!
-plumbing_second = Material.new(name: "paving and walling", category: "Garden", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width:rand(10..100), weight: rand(1..100), supplier_id: 2)
+plumbing_second = Material.new(name: "paving and walling", category: "Garden", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width:rand(10..100), weight: rand(1..100))
 plumbing_second.save!
-plumbing_third = Material.new(name: "fencing", category: "Garden", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), supplier_id: 2)
+plumbing_third = Material.new(name: "fencing", category: "Garden", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100))
 plumbing_third.save!
-electrical_first = Material.new(name: "outdoorlights", category: "electrical", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), supplier_id: 3)
+electrical_first = Material.new(name: "outdoorlights", category: "electrical", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100))
 electrical_first.save!
-electrical_second = Material.new(name: "security alarms", category: "electrical", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), supplier_id: 3)
+electrical_second = Material.new(name: "security alarms", category: "electrical", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100))
 electrical_second.save!
-electrical_third = Material.new(name: "electrical cables", category: "electrical", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), supplier_id: 3)
+electrical_third = Material.new(name: "electrical cables", category: "electrical", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100))
 electrical_third.save!
 
 # puts 'suppliers...'
@@ -72,10 +68,4 @@ electrical_third.save!
 # supplier_third = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
 # supplier_third.save!
 # puts 'Finished!'
-<<<<<<< HEAD
-=======
 
->>>>>>> eb5c19586eb9402971cd3e16290229e3d4e643c9
-=======
-
->>>>>>> 73895141711a927486d61616b1586e4df532de4d

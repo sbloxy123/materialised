@@ -1,3 +1,4 @@
 class Supplier < ApplicationRecord
-  belongs_to :material
+  has_many :materials, through: :material_suppliers
+  has_many :material_suppliers
 end
