@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-<<<<<<< HEAD
+
 puts "Cleaning database..."
 Material.destroy_all
 Basket.destroy_all
@@ -94,5 +94,3 @@ electrical_third.save!
 # supplier_third = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
 # supplier_third.save!
 # puts 'Finished!'
-
->>>>>>> 73895141711a927486d61616b1586e4df532de4d

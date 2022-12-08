@@ -1,5 +1,5 @@
 
-<div class="flex-container">
+<div class="flex-container-one">
   <div class="first-div">
     <div class="header-one-div">
       <h1> Construction materials delivered same day, with a promise</h1>
@@ -13,7 +13,9 @@
           placeholder: "SEARCH FOR PRODUCT OR CATEGORY..."
         %>
       <% end %>
-      <button class="orange-button">Shop Now</button>
+      <form action="/materials" method="get">
+        <button type="submit" class="orange-button">Shop Now</button>
+      </form>
     </div>
 
     <div class="header-two-p-div">
@@ -27,8 +29,6 @@
   </div>
   <div class="third-div">
     <%= image_tag "truck.jpg", class: "truck-image" %>
-  </div>
-  <div class="fourth-div">
   </div>
 </div>
 <div class="container">
