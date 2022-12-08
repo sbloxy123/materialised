@@ -48,6 +48,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "site_location"
+    t.bigint "driver_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["driver_id"], name: "index_orders_on_driver_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -67,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_140026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "baskets", "materials"
   add_foreign_key "orders", "drivers"
   add_foreign_key "orders", "users"
 end
