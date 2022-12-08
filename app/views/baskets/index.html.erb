@@ -1,3 +1,4 @@
+
 <% sum = 0 %>
 <% @basket_items.each do |item| %>
   <% sum += @materials.find(item.material_id).price %>
@@ -45,6 +46,7 @@
             <%= link_to "View details", material_path(item.material_id) %>
           </div>
         </div>
+
       </div>
     <% end %>
     </div>

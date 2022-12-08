@@ -5,11 +5,15 @@ class OrdersController < ApplicationController
   end
 
   def create
+    raise
     @user = current_user.id
     @order = Order.new(order_params)
     @driver = Driver.find(params[:id])
     @order.user = @user
-    @order.driver = @driver
+
+    # @order.driver = @driver
+    @order.driver_id = 1
+
     if @order.save
       redirect_to checkout_path(@order)
     else

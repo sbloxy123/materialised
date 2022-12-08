@@ -5,23 +5,35 @@ class BasketsController < ApplicationController
     @order_number = Order.all
     @materials = Material.all
     @basket_items = Basket.all
+    # @basket_edit = Basket.find(self)
   end
-
 
   def create
     @material = Material.find(params[:material])
     # @basket.order_id = current_user.order_id??
-    # todo - if statement - user_session? / current basket
+
+    @the_user = current_user
     @basket = Basket.new(basket_params)
-    # @basket.order_id = @user???
-    @basket.material_id = @material.id
-    if @basket.save
-      raise
-      redirect_to material_path(@material)
+    if current_user.order_ids.length < 1
+      @order = Order.new
+      @order.user = current_user
+      @order.save
+      @basket.order = @order
     else
-      render :index, status: :unprocessable_entity
+      @order = current_user.order_ids.first
+      @basket.order_id = @order
+    end
+    @basket.material = @material
+    if @basket.save
+      # TODO: ADD ALERT / MODAL
+    else
+      # TODO: ADD ALERT RE UNSUCCESSFUL
     end
   end
+
+  # def edit
+  #   @basket = Booking.find(params[:id])
+  # end
 
   private
 
@@ -30,7 +42,7 @@ class BasketsController < ApplicationController
   end
 
   def basket_params
-    params.require(:basket).permit(:quantity, :material_id)
+    params.require(:basket).permit(:quantity)
   end
 
 end
