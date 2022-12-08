@@ -60,12 +60,11 @@ electrical_second.save!
 electrical_third = Material.new(name: "electrical cables", category: "electrical", description: "#{Faker::Hipster.paragraph(sentence_count: 3)}", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), supplier_id: 3)
 electrical_third.save!
 
-# puts 'suppliers...'
-# supplier_one = Supplier.new(name: "Faker::Name.supplier_name", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
-# supplier_one.save!
-# supplier_second = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
-# supplier_second.save!
-# supplier_third = Supplier.new(name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
-# supplier_third.save!
-# puts 'Finished!'
-
+puts 'suppliers...'
+supplier_one = Supplier.new(id: 1, name: "Faker::Name.supplier_name", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
+supplier_one.save!
+supplier_second = Supplier.new(id: 2, name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
+supplier_second.save!
+supplier_third = Supplier.new(id: 3, name: "Faker::Name.supplier_name,", address: "#{Faker::Address.street_address}, #{Faker::Address.city}")
+supplier_third.save!
+puts 'Finished!'

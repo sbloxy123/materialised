@@ -9,6 +9,7 @@ class MaterialsController < ApplicationController
 
   def show
     @material = Material.find(params[:id])
+    # @material.supplier = Supplier.find(params[:id])
   end
 
   private
