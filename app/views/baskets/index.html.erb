@@ -31,12 +31,13 @@
   </div>
 </div>
 <h1 class= my-3>Items in your basket</h1>
-<div class="w-75 m-auto">
+<div class="w-50 m-auto">
 <div id="index-grid">
     <% @basket_items.each do |item| %>
     <div class="container card-border">
         <div class="container d-flex gap-30 mt-5 pb-5 border-bottom">
-          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="" id="img-test">
+            <%= image_tag "#{item.material.image}", class: "img-test" %>
+
           <div class="name-des">
             <h5><%= @materials.find(item.material_id).name %></h5>
             <p><%= @materials.find(item.material_id).description %></p>
@@ -59,5 +60,3 @@
     </div>
   </div>
 </div>
-
-<%= render partial: "shared/basket" %>
