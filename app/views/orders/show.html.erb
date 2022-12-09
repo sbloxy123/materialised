@@ -31,14 +31,13 @@
 <h3>Pick a driver:</h3>
 
 <%= form_with model: @order do |form| %>
-  <div class="d-flex justify-content-between flex-wrap">
+  <div class="border">
     <% @drivers.each do |driver| %>
       <div>
-        <div class="border p-3 w-40">
+        <div class="p-3 w-40">
         <ul>
-        <li><%= driver.name %></li>
-        <li><%= driver.vehicle_type %></li>
-        <li><%= driver.rating %></li>
+        <p><%= driver.name %></p>
+        <p><%= driver.vehicle_type %></p>
         </ul>
         </div>
       </div>
