@@ -79,8 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "material_id", null: false
-    t.index ["material_id"], name: "index_suppliers_on_material_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -101,5 +99,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
   add_foreign_key "material_suppliers", "suppliers"
   add_foreign_key "orders", "drivers"
   add_foreign_key "orders", "users"
-  add_foreign_key "suppliers", "materials"
 end
