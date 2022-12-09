@@ -18,11 +18,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
     t.bigint "material_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "materials_id", null: false
     t.integer "quantity"
     t.bigint "order_id", null: false
     t.index ["material_id"], name: "index_baskets_on_material_id"
-    t.index ["materials_id"], name: "index_baskets_on_materials_id"
     t.index ["order_id"], name: "index_baskets_on_order_id"
   end
 
@@ -98,7 +96,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
   end
 
   add_foreign_key "baskets", "materials"
-  add_foreign_key "baskets", "materials", column: "materials_id"
   add_foreign_key "baskets", "orders"
   add_foreign_key "material_suppliers", "materials"
   add_foreign_key "material_suppliers", "suppliers"
