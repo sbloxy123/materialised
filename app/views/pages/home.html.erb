@@ -39,12 +39,12 @@
     <% @materials.each do |material| %>
       <% categories << material.category %>
     <% end %>
-    <div id="index-grid">
+    <div id="categories-grid">
       <% categories.uniq.each do |category| %>
-        <div class="category-card">
+        <div class="category-card category-card-size">
           <img src="https://media.wickes.co.uk/is/image/wickes/GPID_1100377536_00?$normal$" alt="material">
         <hr>
-          <p><%=link_to "#{category}", materials_path(:query => "#{category}") %></p>
+          <p class="mt-2"><%=link_to "#{category}", materials_path(:query => "#{category}") %></p>
         </div>
       <% end %>
     </div>
