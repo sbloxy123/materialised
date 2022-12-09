@@ -1,5 +1,6 @@
-<div class="modal-card">
-<h1 class><%= @order.user.name %>, here is your order:</h1>
+<div class="modal-card m-auto">
+<%# <%= @order.user.name ,%>
+<h1 class> here is your order:</h1>
 
  <div class="map-container">
   <iframe id="inlineFrameExample"
@@ -14,16 +15,39 @@
   <div class="image-text-container">
     <%= image_tag "sample.jpg", class: "avatar-large" %>
     <div class="small-box-avatar">
-    <p><%= @order.driver.rating %></p>
-    <p><%= @order.driver.name %></p>
+    <%# <p><%= @order.driver.rating %></p>
+    <%# <p><%= @order.driver.name %></p>
     </div>
   </div>
   <div class="image-text-container">
     <%= image_tag "sample.jpg", class: "avatar-large" %>
     <div class="small-box-avatar">
-    <p><%= @order.driver.plate_number %></p>
-    <p><%= @order.driver.vehicle_type %></p>
+    <%# <p><%= @order.driver.plate_number %></p>
+    <%# <p><%= @order.driver.vehicle_type %></p>
     </div>
   </div>
 </div>
+
+<h3>Pick a driver:</h3>
+
+<%= form_with model: @order do |form| %>
+  <div class="d-flex justify-content-between flex-wrap">
+    <% @drivers.each do |driver| %>
+      <div>
+        <div class="border p-3 w-40">
+        <ul>
+        <li><%= driver.name %></li>
+        <li><%= driver.vehicle_type %></li>
+        <li><%= driver.rating %></li>
+        </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="my-3">
+  <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
+  </div>
+  <%= form.submit "add driver" %>
+<% end %>
+<%= link_to "Pay now", orders_path %>
 </div>

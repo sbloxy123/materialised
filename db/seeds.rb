@@ -26,11 +26,11 @@ puts 'users...'
 # order_third = Order.new(order: "", site_location:"BEXLEY", driver_id: 3, user_id: 1)
 # order_third.save!
 puts 'Drivers...'
-driver_one = Driver.new(name: "tim", location:"london", vehicle_type: "Medium truck")
+driver_one = Driver.new(name: "tim", location: "london", vehicle_type: "Medium truck")
 driver_one.save!
 driver_second = Driver.new(name: "william", location: "DARTFORD", vehicle_type: "Large truck")
 driver_second.save!
-driver_third = Driver.new(name: "bill",location: "Bexley", vehicle_type: "truck ")
+driver_third = Driver.new(name: "bill", location: "Bexley", vehicle_type: "truck ")
 driver_third.save!
 
 # puts 'order_materials...'

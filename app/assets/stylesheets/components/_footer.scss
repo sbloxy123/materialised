@@ -1,19 +1,19 @@
 
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      padding: 30px 10px;
-      margin-top: 30px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      ;
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+    margin-top: 30px;
+    position: sticky;
+    bottom: 0;
+    background-color: #ECECEC;
+    left: 0;
 
+width: 100%;
+    color: white;
+    text-align: center
+      }
 
-
-    }
-
-     .logo {
-
-     width :100px;
-     }
+  .logo {
+    width :100px;
+      }

@@ -11,27 +11,23 @@
 
       <div class="details-div">
         <div class="details-again-div">
-          <h2>Product Details</h2>
-          <p>Donec bibendum tortor in convallis sagittis. Etiam
-          vulputate neque consectetur magna euismod
-          consequat.
-          Quisque nec neque id odio lacinia imperdiet quis sed
-          leo. Fusce eu tristique justo. Morbi maximus facilisis
-          est eget tincidunt. In maximus odio sed dui suscipit
-          gravida. Suspendisse potenti.
+
+          <p><%= @material.description %>
           </p>
         </div>
 
         <div class="price-button-div">
 
           <div>
-          <h2>Price:</h2>
+          <h2>€<%= @material.price %></h2>
           </div>
 
           <div>
-            <form action="/" method="get">
-              <button type="submit" class="orange-button">Buy</button>
-            </form>
+            <%= simple_form_for @basket do |f| %>
+              <%= hidden_field_tag :material, @material.id %>
+              <%= f.input :quantity, input_html: { type: 'number' } %>
+              <button type="submit" class="cart-button" onclick="alert('Added to Basket')">Add To Basket <i class="fa-solid fa-basket-shopping"></i></button>
+            <% end %>
           </div>
 
         </div>
@@ -40,8 +36,8 @@
 
     <div class="third-div-show">
       <div>
-        <h2>Suppliers: </h2>
-        <h2>Vehicle-type required: </h2>
+        <h2>Supplier: Miers Construction Products </h2>
+        <h2><i class="fa-solid fa-truck"></i>: Dump Truck </h2>
       </div>
     </div>
 
@@ -51,9 +47,3 @@
 
   </div>
 </div>
-
-<%= simple_form_for @basket do |f| %>
-  <%= hidden_field_tag :material, @material.id %>
-  <%= f.input :quantity, placeholder: "How many?" %>
-  <%= f.submit class: "btn btn-flat" %>
-<% end %>
