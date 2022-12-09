@@ -22,7 +22,18 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @drivers = Driver.all
+    @orders_all = Order.all
     @order = Order.find(params[:id])
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    if @order.update(order_params)
+      redirect_to baskets_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private

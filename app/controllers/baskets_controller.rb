@@ -5,13 +5,10 @@ class BasketsController < ApplicationController
     @order_number = Order.all
     @materials = Material.all
     @basket_items = Basket.all
-    # @basket_edit = Basket.find(self)
   end
 
   def create
     @material = Material.find(params[:material])
-    # @basket.order_id = current_user.order_id??
-
     @the_user = current_user
     @basket = Basket.new(basket_params)
     if current_user.order_ids.length < 1
@@ -30,10 +27,6 @@ class BasketsController < ApplicationController
       # TODO: ADD ALERT RE UNSUCCESSFUL
     end
   end
-
-  # def edit
-  #   @basket = Booking.find(params[:id])
-  # end
 
   private
 

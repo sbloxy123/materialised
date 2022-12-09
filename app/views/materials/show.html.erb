@@ -29,9 +29,11 @@
           </div>
 
           <div>
-            <form action="/" method="get">
-              <button type="submit" class="orange-button">Buy</button>
-            </form>
+            <%= simple_form_for @basket do |f| %>
+              <%= hidden_field_tag :material, @material.id %>
+              <%= f.input :quantity, placeholder: "How many?" %>
+              <%= f.submit class: "orange-button" %>
+            <% end %>
           </div>
 
         </div>
@@ -51,9 +53,3 @@
 
   </div>
 </div>
-
-<%= simple_form_for @basket do |f| %>
-  <%= hidden_field_tag :material, @material.id %>
-  <%= f.input :quantity, placeholder: "How many?" %>
-  <%= f.submit class: "btn btn-flat" %>
-<% end %>
