@@ -1,9 +1,13 @@
 .flex-container-one {
   display: flex;
   flex-direction: row;
-}
 
-.first-div {
+}
+ .first-container {
+  height: 100vh;
+ }
+
+ .first-div {
   width: 45%;
   height: 600px;
   padding: 40px 0 40px 80px;
@@ -59,4 +63,3 @@
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   }
 }
-
