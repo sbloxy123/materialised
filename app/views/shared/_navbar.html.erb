@@ -12,14 +12,15 @@
     </button>
 
     <div>
-    <%= link_to "Products", materials_path, class: "d-inline me-5 nav-link navbar-links-color fw-bold fs-5" %>
-    <%= link_to "Categories", "#", class: "d-inline me-5 nav-link navbar-links-color fw-bold fs-5" %>
-    <%= link_to "About us", "#", class: "d-inline nav-link navbar-links-color fw-bold fs-5" %>
+    
     </div>
 
     <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <li>
+            <%= link_to "Products", materials_path, class: "d-inline me-5 nav-link navbar-links-color fw-bold fs-5" %>
+          </li>
           <li class="nav-item active me-5">
             <i class="fa-solid fa-cart-shopping navbar-links-color"></i><%= link_to "Checkout", baskets_path, class: "nav-link d-inline navbar-links-color fw-bold fs-5" %>
           </li>

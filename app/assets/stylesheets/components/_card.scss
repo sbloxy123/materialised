@@ -9,7 +9,7 @@
   flex-basis: 45%;
 }
 
-#img-test{
+.img-test{
   width: 45%;
   max-height: 125px;
 }
@@ -37,8 +37,8 @@ p{
   border: 1px solid rgba(0, 0, 0, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background-color: white;
-  height: 240px;
-  width: 240px;
+  // height: 240px;
+  // width: 240px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -58,4 +58,8 @@ p{
   align-content: center;
   margin: auto;
   margin-bottom: 11.5px;
+}
+
+.category-card-size{
+  flex-basis: 20%;
 }
