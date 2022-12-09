@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2022_12_07_133442) do
-=======
 ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
->>>>>>> 683bb2f1208e4eabbca91c37870c34df09644182
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,11 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
     t.integer "quantity"
     t.bigint "order_id", null: false
     t.index ["material_id"], name: "index_baskets_on_material_id"
-<<<<<<< HEAD
     t.index ["materials_id"], name: "index_baskets_on_materials_id"
-=======
     t.index ["order_id"], name: "index_baskets_on_order_id"
->>>>>>> 683bb2f1208e4eabbca91c37870c34df09644182
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -62,10 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
     t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.bigint "suppliers_id"
     t.index ["suppliers_id"], name: "index_materials_on_suppliers_id"
-=======
   end
 
   create_table "orders", force: :cascade do |t|
@@ -76,7 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
     t.datetime "updated_at", null: false
     t.index ["driver_id"], name: "index_orders_on_driver_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
->>>>>>> 683bb2f1208e4eabbca91c37870c34df09644182
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -93,8 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "material_id", null: false
-    t.index ["material_id"], name: "index_suppliers_on_material_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,20 +93,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "baskets", "materials"
-<<<<<<< HEAD
   add_foreign_key "baskets", "materials", column: "materials_id"
-=======
   add_foreign_key "baskets", "orders"
   add_foreign_key "material_suppliers", "materials"
   add_foreign_key "material_suppliers", "suppliers"
->>>>>>> 683bb2f1208e4eabbca91c37870c34df09644182
   add_foreign_key "orders", "drivers"
   add_foreign_key "orders", "users"
-  add_foreign_key "suppliers", "materials"
 end
