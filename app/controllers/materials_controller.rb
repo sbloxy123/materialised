@@ -1,7 +1,8 @@
 class MaterialsController < ApplicationController
   def index
     if params[:query].present?
-      @materials = Material.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @materials = Material.where(sql_query, query: "%#{params[:query]}%")
     else
       @materials = Material.all
     end
@@ -9,6 +10,7 @@ class MaterialsController < ApplicationController
 
   def show
     @material = Material.find(params[:id])
+    @basket = Basket.new
   end
 
   private

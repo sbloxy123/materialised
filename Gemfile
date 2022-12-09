@@ -83,3 +83,6 @@ end
 
 gem 'bootstrap', '~> 5.2.2'
 gem 'sass-rails'
+
+gem "pg_search"
+

@@ -1,29 +1,37 @@
+
 <% sum = 0 %>
 <% @basket_items.each do |item| %>
   <% sum += @materials.find(item.material_id).price %>
 <% end %>
 
-<div class="container">
-      <h2 class= mt-3> Order Summary </h2>
 
+
+<div class="container">
+<div class="w-75 m-auto">
+      <h2 class= mt-3> Order Summary</h2>
   <div class="border p-3 mt-3 position-relative w-80 m-auto">
     <div class="m-3">
-
-      <%# TODO: add details from order controller %>
       <h3> Delivery Address: </h3>
-      <p>** to be taken from the orders controller</p>
-
+      <div class="w-50">
+        <%= simple_form_for @order_number.first do |f| %>
+          <%= f.input :site_location, placeholder: "enter address" %>
+          <%= f.submit 'add address', class: "orange-button" %>
+        <% end %>
+      </div>
+      <hr class="my-3">
 
       <%# TODO: add delivery fee algorithm? %>
-      <p>Delivery and handling fee: £ xxx <- to be calculated..?</p>
+      <p>Delivery and handling fee: £ 17.50</p>
       <% tax_amount = sum/20.to_f %>
       <p>Tax = £ <%= sprintf("%.2f", tax_amount) %> </p>
-      <h3>total:  £<%= sprintf("%.2f", sum) %></h3>
+      <h4>total:  £<%= sprintf("%.2f", sum) %></h4>
       <p class="w-50">Notice: one or more of your items is more than 3 metres so a surcharge of £9.99 has been added to the delivery fee</p>
     </div>
-    <%= link_to "PAY NOW", baskets_path, "class" => "orange-button position-absolute bottom-0 end-0 m-3"%>
+    <%= link_to "PAY NOW", order_path(@order_number.ids), "class" => "orange-button position-absolute bottom-0 end-0 m-3"%>
   </div>
+</div>
 <h1 class= my-3>Items in your basket</h1>
+<div class="w-75 m-auto">
 <div id="index-grid">
     <% @basket_items.each do |item| %>
     <div class="container card-border">
@@ -44,8 +52,10 @@
             <%= link_to "View details", material_path(item.material_id) %>
           </div>
         </div>
+
       </div>
     <% end %>
+    </div>
     </div>
   </div>
 </div>
