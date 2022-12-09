@@ -1,11 +1,14 @@
 class OrdersController < ApplicationController
 
+  def index
+
+  end
+
   def new
     @order = Order.new
   end
 
   def create
-    raise
     @user = current_user.id
     @order = Order.new(order_params)
     @driver = Driver.find(params[:id])
@@ -30,7 +33,7 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
-      redirect_to baskets_path
+      redirect_to order_path
     else
       render :edit, status: :unprocessable_entity
     end

@@ -53,6 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143838) do
     t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "suppliers_id"
+    t.index ["suppliers_id"], name: "index_materials_on_suppliers_id"
   end
 
   create_table "orders", force: :cascade do |t|
