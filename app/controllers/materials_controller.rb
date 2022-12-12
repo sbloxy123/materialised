@@ -11,6 +11,8 @@ class MaterialsController < ApplicationController
   def show
     @material = Material.find(params[:id])
     @basket = Basket.new
+    @order = current_user.orders.last # TO-DO: Fix last with pending order
+    @basket_items = @order.baskets
   end
 
   private
