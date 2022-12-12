@@ -1,0 +1,18 @@
+<div class=".mapboxgl-popup">
+  <%# <div class="mapboxgl-popup-content"> %>
+    <div class="d-flex">
+      <%= image_tag driver.driver_img, height: 75 %>
+      <div class="p-2">
+        <h4 class="mb-0"><%= driver.name %></h4>
+        <h5 class="mt-0"><%= driver.vehicle_type %></h5>
+      </div>
+    </div>
+    <p>Rating: </p>
+    <div class="select-driver">
+      <%= form_with model: @order do |form| %>
+        <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
+        <%= form.submit "Pick This Driver" %>
+      <% end %>
+    </div>
+  <%# </div> %>
+</div>

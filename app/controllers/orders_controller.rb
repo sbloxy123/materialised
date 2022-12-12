@@ -16,7 +16,6 @@ class OrdersController < ApplicationController
 
     # @order.driver = @driver
     @order.driver_id = 1
-
     if @order.save
       redirect_to checkout_path(@order)
     else
@@ -28,6 +27,17 @@ class OrdersController < ApplicationController
     @drivers = Driver.all
     @orders_all = Order.all
     @order = Order.find(params[:id])
+    @markers = []
+    @markers << { lat: @order.latitude, lng: @order.longitude, image_url: helpers.asset_url("icons/construction.png") }
+    @markers << @drivers.geocoded.map do |driver_coordinates|
+      {
+        lat: driver_coordinates.latitude,
+        lng: driver_coordinates.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { driver: driver_coordinates }),
+        image_url: helpers.asset_url("icons/#{driver_coordinates.vehicle_type}.svg"),
+      }
+    end
+    @markers = @markers.flatten
   end
 
   def update

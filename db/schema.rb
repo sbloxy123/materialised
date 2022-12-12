@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_09_103831) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_160334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_103831) do
     t.datetime "updated_at", null: false
     t.string "plate_number"
     t.integer "rating"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "driver_img"
   end
 
   create_table "material_suppliers", force: :cascade do |t|
@@ -64,6 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_103831) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["driver_id"], name: "index_orders_on_driver_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end

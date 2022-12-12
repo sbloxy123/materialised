@@ -25,13 +25,25 @@ puts 'users...'
 # order_second.save!
 # order_third = Order.new(order: "", site_location:"BEXLEY", driver_id: 3, user_id: 1)
 # order_third.save!
+
 puts 'Drivers...'
-driver_one = Driver.new(name: "tim", location: "london", vehicle_type: "Medium truck")
+driver_one = Driver.new(name: "Tim", location: "Lambeth, London", vehicle_type: "Large truck", driver_img: "31.jpeg")
 driver_one.save!
-driver_second = Driver.new(name: "william", location: "DARTFORD", vehicle_type: "Large truck")
+driver_second = Driver.new(name: "William", location: "Temple, London", vehicle_type: "Van", driver_img: "daa.jpeg")
 driver_second.save!
-driver_third = Driver.new(name: "bill", location: "Bexley", vehicle_type: "truck ")
+driver_third = Driver.new(name: "Bill", location: "Canonbury Rd, London", vehicle_type: "Motorbike", driver_img: "chap.jpeg")
 driver_third.save!
+driver_fourth = Driver.new(name: "Alex", location: "Harley St, London", vehicle_type: "Van", driver_img: "ddd.webp")
+driver_fourth.save!
+driver_fifth = Driver.new(name: "Peter", location: "St James's Square, London", vehicle_type: "Large truck", driver_img: "erf.png")
+driver_fifth.save!
+driver_sixth = Driver.new(name: "Paul", location: "Old Brompton Rd, London", vehicle_type: "Motorbike", driver_img: "images.jpeg")
+driver_sixth.save!
+driver_seventh = Driver.new(name: "Greg", location: "Westminster, London", vehicle_type: "Large truck", driver_img: "man.jpeg")
+driver_seventh.save!
+driver_eigth = Driver.new(name: "Ryan", location: "Rawlings St, London", vehicle_type: "Van", driver_img: "pic.png")
+driver_eigth.save!
+
 
 # puts 'order_materials...'
 # Order_materials_first = Order_material.new(order_id: 1, material_id:1, quantity:rand(1..100) )
