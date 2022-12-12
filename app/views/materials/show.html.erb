@@ -1,12 +1,12 @@
 <div class="materials-show-flex">
-  <div class="flex-container-two margin-container-one-show" data-controller="products">
+  <div class="flex-container-two margin-container-one-show">
     <div class="first-div-show">
-      <h2 data-products-target="item_name"><%= @material.name.capitalize %></h2>
+      <h2><%= @material.name.capitalize %></h2>
     </div>
 
     <div class="second-div-show flex-container-one">
       <div class="image-show-div">
-        <%= image_tag @material.image, class: "material-image",  data: { products_target: "image" }  %>
+        <%= image_tag @material.image, class: "material-image" %>
       </div>
 
       <div class="details-div">
@@ -19,11 +19,11 @@
         <div class="price-button-div">
 
           <div>
-          <h2 data-products-target="item_price">€<%= @material.price %></h2>
+          <h2>€<%= @material.price %></h2>
           </div>
 
           <div>
-            <%= simple_form_for @basket, data: {products_target: "form", action: "submit->products#add"} do |f| %>
+            <%= simple_form_for @basket do |f| %>
               <%= hidden_field_tag :material, @material.id %>
               <%= f.input :quantity, input_html: { type: 'number' } %>
               <button type="submit" class="cart-button" onclick="alert('Added to Basket')">Add To Basket <i class="fa-solid fa-basket-shopping"></i></button>
@@ -44,6 +44,9 @@
   </div>
 
   <div class="margin-container-two-show">
+    <% @basket_items.each do |item| %>
+    <p><%= item.material.name %></p>
 
+    <% end %>
   </div>
 </div>
