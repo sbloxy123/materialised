@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_12_132646) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_163949) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,16 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_132646) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
   end
 
-  create_table "side_baskets", force: :cascade do |t|
-    t.bigint "material_id", null: false
-    t.integer "quantity"
-    t.bigint "order_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["material_id"], name: "index_side_baskets_on_material_id"
-    t.index ["order_id"], name: "index_side_baskets_on_order_id"
-  end
-
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -111,6 +101,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_132646) do
   add_foreign_key "material_suppliers", "suppliers"
   add_foreign_key "orders", "drivers"
   add_foreign_key "orders", "users"
-  add_foreign_key "side_baskets", "materials"
-  add_foreign_key "side_baskets", "orders"
 end
