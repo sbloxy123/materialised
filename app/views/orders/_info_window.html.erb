@@ -7,12 +7,25 @@
         <h5 class="mt-0"><%= driver.vehicle_type %></h5>
       </div>
     </div>
-    <p>Rating: </p>
+    <div class="d-flex">
+      <h6 class="mt-2">Rating: </h6>
+      <% if driver.rating == 1 %>
+        <%= image_tag "1-star.png", height: 15, class: "mt-2 ms-2" %>
+      <% elsif driver.rating == 2 %>
+        <%= image_tag "2-star.png", height: 15, class: "mt-2 ms-2" %>
+      <% elsif driver.rating == 3 %>
+        <%= image_tag "3-star.png", height: 15, class: "mt-2 ms-2" %>
+      <% elsif driver.rating == 4 %>
+        <%= image_tag "4-star.png", height: 15, class: "mt-2 ms-2" %>
+      <% else %>
+        <%= image_tag "5-star.png", height: 15, class: "mt-2 ms-2" %>
+      <% end %>
+
+    </div>
     <div class="select-driver">
       <%= form_with model: @order do |form| %>
         <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
         <%= form.submit "Pick This Driver" %>
       <% end %>
     </div>
-  <%# </div> %>
 </div>

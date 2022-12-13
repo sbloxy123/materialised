@@ -6,23 +6,23 @@
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+<%#
 <div class="avatar-container">
   <div class="image-text-container">
     <%= image_tag "sample.jpg", class: "avatar-large" %>
-    <div class="small-box-avatar">
-    <p><%= @order.driver.rating %></p>
-    <p><%= @order.driver.name%></p>
-    </div>
-  </div>
-  <div class="image-text-container">
+    <%# <div class="small-box-avatar">
+    <p><%= @order.driver.rating %>
+    <%# <p><%= @order.driver.name%>
+    <%# </div>
+  </div> %>
+  <%# <div class="image-text-container">
     <%= image_tag "sample.jpg", class: "avatar-large" %>
-    <div class="small-box-avatar">
-    <p><%= @order.driver.plate_number %> </p>
-    <p><%= @order.driver.vehicle_type %></p>
-    </div>
-  </div>
-</div>
+    <%# <div class="small-box-avatar">
+    <p><%= @order.driver.plate_number %>
+    <%# <p><%= @order.driver.vehicle_type %>
+    <%# </div> %>
+  <%# </div> %>
+<%# </div> %>
 
 <h3>Pick a driver:</h3>
 

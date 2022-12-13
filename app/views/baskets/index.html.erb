@@ -14,8 +14,11 @@
       <h3> Delivery Address: </h3>
       <div class="w-50">
         <%= simple_form_for @order_number.first do |f| %>
-          <%= f.input :site_location, label: "Site Location", placeholder: "Enter Address" %>
-          <%= f.submit 'Add Address', class: "orange-button" %>
+             <%= f.input :site_location, label: "Site Location", placeholder: "Enter Address",
+            input_html: {data: {address_autocomplete_target: "address"}},
+            wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+          %>
+          <%= f.submit 'add address', class: "orange-button" %>
         <% end %>
       </div>
       <hr class="my-3">
@@ -46,11 +49,7 @@
         </div>
         <div class="d-flex space-between">
           <div>
-<<<<<<< HEAD
-          <%# <p class="mt-2">Input for quantity</p> %>
-=======
           <p class="mt-2">Quantity: <%= item.quantity %></p>
->>>>>>> master
           <p>Vehicle image and type</p>
           </div>
           <div>
