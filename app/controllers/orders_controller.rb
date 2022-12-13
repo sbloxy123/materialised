@@ -29,16 +29,21 @@ class OrdersController < ApplicationController
     @suppliers = Supplier.all
     @orders_all = Order.all
     @order = Order.find(params[:id])
+    @show
     @markers = []
     @markers << { lat: @order.latitude, lng: @order.longitude, image_url: helpers.asset_url("icons/construction.png") }
-    @markers << @drivers.geocoded.map do |driver_coordinates|
-      {
-        lat: driver_coordinates.latitude,
-        lng: driver_coordinates.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { driver: driver_coordinates }),
-        image_url: helpers.asset_url("icons/#{driver_coordinates.vehicle_type}.png")
-      }
-    end
+    # if @order.driver_id == 1
+      # if user clicks button in the view, it will hide/show the driver markers
+      # if the user picks a driver, the other drivers will be hidden
+      @markers << @drivers.geocoded.map do |driver_coordinates|
+        {
+          lat: driver_coordinates.latitude,
+          lng: driver_coordinates.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { driver: driver_coordinates }),
+          image_url: helpers.asset_url("icons/#{driver_coordinates.vehicle_type}.png")
+        }
+      end
+    # else
     @markers << @suppliers.geocoded.map do |supplier_coordinates|
       {
         lat: supplier_coordinates.latitude,
@@ -46,6 +51,7 @@ class OrdersController < ApplicationController
         info_window: render_to_string(partial: "supplier_info_window", locals: { supplier: supplier_coordinates }),
         image_url: helpers.asset_url("#{supplier_coordinates.image}.png")
       }
+    # end
     end
     @markers = @markers.flatten
   end
