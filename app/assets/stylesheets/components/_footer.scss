@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     padding: 30px 10px;
-    margin-top: 30px;
+    margin-top: auto;
     bottom: 0;
     background-color: #ECECEC;
     left: 0;
@@ -14,5 +14,10 @@ width: 100%;
       }
 
   .logo {
-    width :100px;
+    height: 70px;
       }
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

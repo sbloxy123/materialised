@@ -15,7 +15,7 @@
   <% end %>
 </div>
 
-<div class="container mt-5" id="index-grid">
+<div class="container mt-5 mb-5" id="index-grid">
   <% @materials.each do |material| %>
     <div class="container card-border card-size">
       <div class="container d-flex gap-30 mt-5 pb-5 border-bottom mb-2">
@@ -33,7 +33,7 @@
         <p class="fs-5"><i class="fa-solid fa-truck-front"></i> Truck available</p>
         </div>
         <div>
-          <p class="mt-2 fs-5 text-align-right">€<%= "#{material.price}" %></p>
+          <p class="mt-2 fs-5 text-align-right"><%= humanized_money_with_symbol(material.price) %></p>
           <p><%= link_to "View details", material_path(material) %></p>
         </div>
       </div>

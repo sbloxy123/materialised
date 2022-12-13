@@ -1,5 +1,9 @@
 <div class="modal-card m-auto">
 <%# <%= @order.user.name ,%>
+
+<h1><%= @order.amount %></h1>
+<h1><%= @order.state %></h1>
+
 <h1 class> here is your order:</h1>
 
 <div style="width: 100%; height: 600px;"
@@ -32,4 +36,16 @@
     </div>
     <%= form.submit "add driver" %>
 <% end %>
+<button id="pay" class="btn btn-primary mb-5">Pay</button>
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @order.checkout_session_id %>'
+          });
+        });
+      </script>
 </div>
