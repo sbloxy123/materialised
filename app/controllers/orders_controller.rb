@@ -53,7 +53,6 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
-      raise
       redirect_to order_path(@order)
     else
       render :edit, status: :unprocessable_entity
