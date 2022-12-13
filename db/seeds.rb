@@ -107,7 +107,6 @@ flooring_fourth.save!
 flooring_fifth = Material.new(name: " Porcelain Wall & Floor", category: "Flooring & Tiling", description: "These polished glazed porcelain tiles feature a stunning veinstone effect. Printed using high definition technology, achieve the look of natural stone with these durable wall and floor tiles in practical, low maintenance porcelain.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/is/image/wickes/GPID_1100629192_00?$normal$")
 flooring_fifth.save!
 
-
 bricks_first = Material.new(name: "Red Facing Brick", category: "Bricks and Lintels", description: "The deep and rich fusions of reds provide Edmonton Stock with its vivid colour, these colours are further enhanced by the delicate stock finish given to this red facing brick. Waterstruck inspired finish coupled with rich and warm shades of red and orange bring this brick to life. ", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://lordsbm.co.uk/pub/media/catalog/product/cache/d2b76106ac544cf84aaef82e9d7f833e/S/B/SBR01790_19ab.jpg")
 bricks_first.save!
 bricks_second = Material.new(name: "Concrete Lintel", category: "Bricks and Lintels", description: "A robust and cost-effective option where a lintel is required. Available in a range of sizes to meet every need", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://www.yorkbuilding.com/wp-content/uploads/2020/08/Lintel_Unit-1.jpg")
@@ -119,7 +118,6 @@ bricks_fourth.save!
 bricks_fifth = Material.new(name: "Red Mavado Facing Brick", category: "Bricks and Lintels", description: "Mavado Red is a vibrant red facing brick from the innovative Kingsvale range. A stunning range of sustainable face brick products brought to you by Marshalls Bricks and Masonry", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/is/image/wickes/GPID_5000081371_00?$normal$")
 bricks_fifth.save!
 
-
 painting_first = Material.new(name: "Paint Roller Kit", category: "Painting & Decorating", description: "This roller kit is ideal for painting your walls and ceilings. It's best suited for using emulsions and satin paints on smooth and semi-smooth surfaces, and contains everything you need, whether you're cutting in, glossing the woodwork, or wanting to paint those hard-to-reach areas.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://ae01.alicdn.com/kf/HTB1qxZMjvImBKNjSZFlq6A43FXaB/Multifunctional-tool-paint-5-pcs-DIY-Paint-Roller-Kit-Painting-Runner-Decor-Professional-Tools-Painting-Wall.jpg")
 painting_first.save!
 painting_second = Material.new(name: "White Emulsion Paint", category: "Painting & Decorating", description: "This vinyl matt emulsion provides a superb, smooth finish to interior walls and ceilings. It's very easy to apply and has a low spatter rate, and it's touch dry within 1-2 hours. Available in a wide range of colours to suit your taste, it's perfect for any interior painting project.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_jpg,h_2250,q_auto:good,w_2250/c_pad,h_2250,w_2250/v1/products/wickes/I9026_121110_00?pgw=1&pgwact=1")
@@ -128,9 +126,8 @@ painting_third = Material.new(name: "Light Grey Wallpaper", category: "Painting 
 painting_third.save!
 painting_fourth = Material.new(name: "Fence Paint Brush", category: "Painting & Decorating", description: "Large brush with soft grip handle suitable for painting and treating sheds and fences.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://img.fruugo.com/product/9/64/155875649_max.jpg")
 painting_fourth.save!
-painting_fifth = Material.new(name: "Arthouse Metallic Wave White & Silver Wallpaper ", category: "Painting & Decorating", description: "Sleek and modern, this wallpaper is the definition of chic with a vertical design in pale silvery tones. Contrasting metallic and glitter, the effect is stunning, bouncing light back into your room", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/is/image/wickes/GPID_1100683043_00?$normal$")
+painting_fifth = Material.new(name: "Arthouse Metallic Wave White & Silver Wallpaper ", category: "Painting & Decorating", description: "Sleek and modern, this wallpaper is the definition of chic with a vertical design in pale silvery tones. Contrasting metallic and glitter, the effect is stunning, bouncing light back into your room .", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/is/image/wickes/GPID_1100683043_00?$normal$")
 painting_fifth.save!
-
 
 puts 'Suppliers...'
 wickes_one = Supplier.new(name: "Wickes", address: "40 Little Portland St
