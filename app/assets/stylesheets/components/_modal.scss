@@ -39,3 +39,99 @@ iframe {
 h1 {
   text-align: center;
 }
+
+
+.material-image-modal {
+  width: 120px;
+  height: 120px;
+
+}
+
+.modal-div-padding {
+  padding: 30px;
+}
+
+.modal-div-padding-bottom {
+  padding-bottom: 0;
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.modal-header h5 {
+  text-align: center;
+}
+
+.flex-modal {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal-heading {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: Arial, serif;
+}
+
+.modal-price {
+  font-size: 18px;
+  text-decoration: none;
+  font-family: Arial, serif;
+}
+
+.card-modal {
+  width: 200px;
+  height: 200px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+  }
+}
+
+.card-modal-no-shadow {
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border: solid 1px #000000;
+}
+
+.modal-div-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .border-bottom-div {
+//   border-bottom: solid 1px #000000;
+// }
+
+.subtotal-end {
+  text-align: end;
+}
+
+.modal-text-center {
+  text-align: center;
+}
+
+.orange-background {
+  background-color: #f0803c;
+}
+
+.no-decoration {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: black;
+  }
+}
