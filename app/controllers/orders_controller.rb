@@ -29,7 +29,6 @@ class OrdersController < ApplicationController
     @suppliers = Supplier.all
     @orders_all = Order.all
     @order = Order.find(params[:id])
-    @show
     @markers = []
     @markers << { lat: @order.latitude, lng: @order.longitude, image_url: helpers.asset_url("icons/construction.png") }
     # if @order.driver_id == 1

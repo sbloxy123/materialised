@@ -13,9 +13,17 @@
 }
 
 .navbar-links-color{
-  color: #225560;
+  color: rgb(240, 238, 238);
+  font-family: "josefin sans";
+  &:hover{
+    color: #F0803C;
+  }
 }
 
 .logo-color{
   color: #F0803C;
+}
+
+.nav-background{
+  background-color: black;
 }
