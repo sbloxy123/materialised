@@ -1,11 +1,20 @@
 .flex-container-one {
   display: flex;
   flex-direction: row;
-  background-image: url("redtr.jpg");
+  // background-image: url("redtr.jpg");
   // background-size: 100% 700px;
   background-repeat: no-repeat;
   margin-top:-5px ;
   width: 100%;
+  height: 100vh;
+}
+.home-flex-container {
+  display: flex;
+  flex-direction: row;
+  background-image: url("redtr.jpg");
+  background-repeat: no-repeat;
+  margin-top:-5px ;
+  width: 100vw;
   height: 100vh;
 }
  .first-container {
