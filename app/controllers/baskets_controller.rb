@@ -19,8 +19,11 @@ class BasketsController < ApplicationController
       @order.state = "pending"
       @order.amount_cents = (@material.price_cents * @basket.quantity) + ((@material.price_cents * @basket.quantity) / 20.to_f)
       @basket.order = @order
-      @order.save
 
+      # MUST CHANGE, HARD CODED JUST TO TEST
+      @order.supplier_id = 1
+
+      @order.save
 
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
