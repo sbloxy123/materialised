@@ -126,7 +126,7 @@ painting_third = Material.new(name: "Light Grey Wallpaper", category: "Painting 
 painting_third.save!
 painting_fourth = Material.new(name: "Fence Paint Brush", category: "Painting & Decorating", description: "Large brush with soft grip handle suitable for painting and treating sheds and fences.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://img.fruugo.com/product/9/64/155875649_max.jpg")
 painting_fourth.save!
-painting_fifth = Material.new(name: "Arthouse Metallic Wave White & Silver Wallpaper ", category: "Painting & Decorating", description: "Sleek and modern, this wallpaper is the definition of chic with a vertical design in pale silvery tones. Contrasting metallic and glitter, the effect is stunning, bouncing light back into your room .", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/is/image/wickes/GPID_1100683043_00?$normal$")
+painting_fifth = Material.new(name: "Arthouse Metallic Wave White & Silver Wallpaper ", category: "Painting & Decorating", description: "Sleek and modern, this wallpaper is the definition of chic with a vertical design in pale silvery tones. Contrasting metallic and glitter, the effect is stunning, bouncing light back into your room.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/is/image/wickes/GPID_1100683043_00?$normal$")
 painting_fifth.save!
 
 puts 'Suppliers...'
