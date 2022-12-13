@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_13_070740) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_13_105139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_070740) do
     t.datetime "updated_at", null: false
     t.string "plate_number"
     t.integer "rating"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "driver_img"
   end
 
   create_table "material_suppliers", force: :cascade do |t|
@@ -52,8 +55,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_070740) do
     t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "suppliers_id"
     t.string "image"
     t.integer "price_cents", default: 0, null: false
+    t.index ["suppliers_id"], name: "index_materials_on_suppliers_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -65,7 +70,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_070740) do
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.string "state"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "supplier_id", null: false
     t.index ["driver_id"], name: "index_orders_on_driver_id"
+    t.index ["supplier_id"], name: "index_orders_on_supplier_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -84,6 +93,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_070740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.binary "image"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,7 +105,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_070740) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -104,5 +114,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_070740) do
   add_foreign_key "material_suppliers", "materials"
   add_foreign_key "material_suppliers", "suppliers"
   add_foreign_key "orders", "drivers"
+  add_foreign_key "orders", "suppliers"
   add_foreign_key "orders", "users"
 end
