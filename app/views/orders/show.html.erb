@@ -1,9 +1,9 @@
 <div class="modal-card m-auto">
 <%# <%= @order.user.name ,%>
 <h1 class="my-3"> Please pick a Driver and preferred supplier from the map:</h1>
-
-<h1><%= @order.amount %></h1>
-<h1><%= @order.state %></h1>
+<%#
+<h1><%= @order.amount %>
+<%# <h1><%= @order.state %>
 
 <div style="width: 100%; height: 600px;"
   data-controller="map"
@@ -35,8 +35,7 @@
   <%# <div class="d-flex justify-content-center my-3">
       <%= link_to "Pay now", orders_path, class: "orange-button" %>
   <%# </div> %>
-    <%= form.submit "add driver" %>
-<% end %>
+
 <button id="pay" class="btn btn-primary mb-5">Pay</button>
 
       <script src="https://js.stripe.com/v3/"></script>
