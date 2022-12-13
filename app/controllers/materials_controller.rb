@@ -8,11 +8,15 @@ class MaterialsController < ApplicationController
     end
   end
 
+
   def show
     @material = Material.find(params[:id])
+    @category = Material.where(category: @material.category)
     @basket = Basket.new
-    @order = current_user.orders.last # TO-DO: Fix last with pending order
+    # @order = current_user.orders.last # TO-DO: Fix last with pending order
     # @basket_items = @order.baskets
+    @basket_items = Basket.all
+    @materials = Material.all
   end
 
   private
