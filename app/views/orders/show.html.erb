@@ -1,35 +1,35 @@
 <div class="modal-card m-auto">
 <%# <%= @order.user.name ,%>
-<h1 class> here is your order:</h1>
+<h1 class="my-3"> Please pick a Driver and preferred supplier from the map:</h1>
 
 <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-<%#
-<div class="avatar-container">
-  <div class="image-text-container">
-    <%= image_tag "sample.jpg", class: "avatar-large" %>
-    <%# <div class="small-box-avatar">
-    <p><%= @order.driver.rating %>
-    <%# <p><%= @order.driver.name%>
-    <%# </div>
-  </div> %>
-  <%# <div class="image-text-container">
-    <%= image_tag "sample.jpg", class: "avatar-large" %>
-    <%# <div class="small-box-avatar">
-    <p><%= @order.driver.plate_number %>
-    <%# <p><%= @order.driver.vehicle_type %>
-    <%# </div> %>
-  <%# </div> %>
-<%# </div> %>
 
-  <h3>Pick a driver:</h3>
-
-  <%= form_with model: @order do |form| %>
-    <div class="m-3">
-    <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
+  <div class="d-flex d-flex justify-content-center align-items-center mt-3">
+    <div class="d-flex flex-column d-flex">
+        <div class ="m-auto">
+          <%= image_tag @order.driver.driver_img, height: 70, class: "rounded-circle"%>
+        </div>
+        <div>
+          <% if @order.driver.rating == 1 %>
+            <%= image_tag "1-star.png", height: 15 %>
+          <% elsif @order.driver.rating == 2 %>
+            <%= image_tag "2-star.png", height: 15 %>
+          <% elsif @order.driver.rating == 3 %>
+            <%= image_tag "3-star.png", height: 15 %>
+          <% elsif @order.driver.rating == 4 %>
+            <%= image_tag "4-star.png", height: 15 %>
+          <% else %>
+            <%= image_tag "5-star.png", height: 15 %>
+          <% end %>
+        </div>
     </div>
-    <%= form.submit "add driver" %>
-<% end %>
+    <h4 class="mt-3 mx-3">Hey, I'm, <%= @order.driver.name %>! I'll be picking up your materials from: </h4>
+    <%= image_tag @order.supplier.image, height: 60%>
+</div>
+  <div class="d-flex justify-content-center my-3">
+      <%= link_to "Pay now", orders_path, class: "orange-button" %>
+  </div>
 </div>
