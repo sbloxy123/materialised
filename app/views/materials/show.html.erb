@@ -1,4 +1,4 @@
-<div class="materials-show-flex">
+
   <div class="flex-container-two margin-container-one-show">
     <div class="first-div-show">
       <h2><%= @material.name.capitalize %></h2>
@@ -12,23 +12,72 @@
       <div class="details-div">
         <div class="details-again-div">
 
-          <p><%= @material.description %>
-          </p>
+          <p><%= @material.description %></p>
         </div>
 
         <div class="price-button-div">
 
           <div>
-
-          <h2>£<%= @material.price %></h2>
-
+          <h2><%= humanized_money_with_symbol(@material.price) %></h2>
           </div>
 
           <div>
             <%= simple_form_for @basket do |f| %>
               <%= hidden_field_tag :material, @material.id %>
               <%= f.input :quantity, input_html: { type: 'number' } %>
-              <button type="submit" class="cart-button" onclick="alert('Added to Basket')">Add To Basket <i class="fa-solid fa-basket-shopping"></i></button>
+              <button type="submit" class="cart-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add To Basket <i class="fa-solid fa-basket-shopping"></i></button>
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg text-center">
+                  <div class="modal-content">
+                    <div class="modal-header bg-success modal-text-center">
+                      <h5 class="modal-title fw-bold" id="staticBackdropLabel"><i class="fa-solid fa-circle-check"></i> Item successfully added to your basket</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body modal-div-padding modal-div-center border-bottom-div modal-div-padding-bottom">
+                      <h6 class="modal-heading">Your item:</h6>
+                      <div class="card-modal-no-shadow">
+                        <p><%= image_tag @material.image, class: "material-image-modal" %></p>
+                        <h6 class="modal-heading"><%= @material.name.capitalize %></h6>
+                        <h6>£<%= @material.price %></h6>
+                      </div>
+                      <% subtotal = 0 %>
+                      <% @basket_items.each do |item| %>
+                        <% subtotal += (@materials.find(item.material_id).price * item.quantity) %>
+                      <% end %>
+                      <br>
+                      <h6 class="modal-heading subtotal-end">Subtotal: £<%= subtotal %></h6>
+                    </div>
+                    <h5 class="modal-title text-center fw-bold" id="staticBackdropLabel">Customers who bought this item also bought:</h5>
+                    <div class="modal-body flex-modal modal-div-padding">
+                      <% @category.each do |item| %>
+                      <div class="card-modal">
+                        <%= link_to item, class: 'no-decoration' do %>
+                        <div>
+                          <p><%= image_tag item.image, class: "material-image-modal"%></p>
+                        </div>
+                        <div>
+                          <div>
+                            <h6 class="modal-heading"><%= item.name %></h6>
+                          </div>
+                          <div>
+                            <h6>£<%= item.price %></h6>
+                          </div>
+                        </div>
+                        <% end %>
+                      </div>
+                      <% end %>
+                    </div>
+                    <div class="modal-footer">
+                      <form action="materials/:id" method="get">
+                      <button type="submit" class="continue-shopping-button" data-bs-dismiss="modal"><i class="fa-solid fa-less-than"></i> Continue Shopping</button>
+                      </form>
+                      <form action="/baskets" method="get">
+                      <button type="submit" class="proceed-checkout-button" data-bs-dismiss="modal">Proceed to Checkout <i class="fa-solid fa-cart-shopping"></i></button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <% end %>
           </div>
 
@@ -44,11 +93,3 @@
     </div>
 
   </div>
-
-  <div class="margin-container-two-show">
-    <% @basket_items.each do |item| %>
-    <p><%= item.material.name %></p>
-
-    <% end %>
-  </div>
-</div>

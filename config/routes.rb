@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :orders
+  resources :orders do
+    resources :payments, only: :new
+  end
   resources :drivers, only: [:index, :show]
 
   resources :materials, only: [:index, :show]
