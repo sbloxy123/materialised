@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_13_105139) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_13_134758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,7 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_105139) do
     t.string "name"
     t.string "category"
     t.string "description"
-    t.integer "price"
     t.integer "length"
     t.integer "width"
     t.integer "weight"
@@ -58,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_105139) do
     t.datetime "updated_at", null: false
     t.bigint "suppliers_id"
     t.string "image"
+    t.integer "price_cents", default: 0, null: false
     t.index ["suppliers_id"], name: "index_materials_on_suppliers_id"
   end
 
@@ -69,7 +69,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_105139) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
     t.bigint "supplier_id", null: false
+    t.string "state"
     t.index ["driver_id"], name: "index_orders_on_driver_id"
     t.index ["supplier_id"], name: "index_orders_on_supplier_id"
     t.index ["user_id"], name: "index_orders_on_user_id"

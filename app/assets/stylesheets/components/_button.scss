@@ -42,3 +42,50 @@
 .cart-button:active {
   transform: scale(.9);
 }
+
+
+.proceed-checkout-button {
+  width: 180px;
+  height: 70px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #f0803c;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    background-color: #ff8c00;
+  }
+
+  &:active {
+    transform: scale(.9);
+  }
+}
+
+.continue-shopping-button {
+  width: 180px;
+  height: 70px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: black;
+  background-color: lightgrey;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    background-color: rgb(248, 248, 248);
+  }
+
+  &:active {
+    transform: scale(.9);
+  }
+}
