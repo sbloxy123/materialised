@@ -11,23 +11,71 @@ class BasketsController < ApplicationController
     @material = Material.find(params[:material])
     @the_user = current_user
     @basket = Basket.new(basket_params)
+
     if current_user.order_ids.length < 1
       @order = Order.new
       @order.user = current_user
+      @order.state = "pending"
+      @order.amount_cents = @material.price_cents * @basket.quantity
       @order.save
       @basket.order = @order
+
+      session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        line_items: [{
+          price_data: {
+            unit_amount: @material.price_cents,
+            currency: 'eur',
+            product_data: {
+              name: @material.name
+            }
+          },
+          quantity: 1
+        }],
+        mode: "payment",
+        success_url: order_url(@order),
+        cancel_url: order_url(@order)
+      )
+
+      @order.update(checkout_session_id: session.id)
+
+
     else
-      @order = current_user.order_ids.first
-      @basket.order_id = @order
+      @order_id = current_user.order_ids.first
+      @order = Order.find(@order_id)
+      @basket.order = @order
+      @order.amount_cents = @order.amount_cents + (@material.price_cents * @basket.quantity)
+      @order.save
+
+      session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        line_items: [{
+          price_data: {
+            unit_amount: @order.amount_cents,
+            currency: 'eur',
+            product_data: {
+              name: @material.name
+            }
+          },
+          quantity: 1
+        }],
+        mode: "payment",
+        success_url: order_url(@order),
+        cancel_url: order_url(@order)
+      )
+
+      @order.update(checkout_session_id: session.id)
+
     end
+
     @basket.material = @material
     if @basket.save
       # TODO: ADD ALERT / MODAL
     else
       # TODO: ADD ALERT RE UNSUCCESSFUL
     end
-  end
 
+  end
   private
 
   def set_basket

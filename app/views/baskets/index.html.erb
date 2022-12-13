@@ -1,7 +1,7 @@
 
 <% sum = 0 %>
 <% @basket_items.each do |item| %>
-  <% sum += @materials.find(item.material_id).price %>
+  <% sum += @materials.find(item.material_id).price * item.quantity %>
 <% end %>
 
 
@@ -24,7 +24,7 @@
       <p>Delivery and handling fee: £ 17.50</p>
       <% tax_amount = sum/20.to_f %>
       <p>Tax = £ <%= sprintf("%.2f", tax_amount) %> </p>
-      <h4>total:  £<%= sprintf("%.2f", sum) %></h4>
+      <h4>total:  £<%= sprintf("%.2f", sum) %></h4
       <p class="w-50">Notice: one or more of your items is more than 3 metres so a surcharge of £9.99 has been added to the delivery fee</p>
     </div>
     <%= link_to "PAY NOW", order_path(@order_number.ids), "class" => "orange-button position-absolute bottom-0 end-0 m-3"%>

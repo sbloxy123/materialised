@@ -51,6 +51,9 @@ gem "sassc-rails"
 #use faker
 gem "faker"
 
+gem 'money-rails', '~>1.12'
+gem 'stripe'
+
 # gem 'bootstrap-sass'
 gem "devise"
 gem "autoprefixer-rails"
@@ -85,4 +88,3 @@ gem 'bootstrap', '~> 5.2.2'
 gem 'sass-rails'
 
 gem "pg_search"
-

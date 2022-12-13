@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   def show
     @drivers = Driver.all
     @orders_all = Order.all
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
   end
 
   def update

@@ -19,7 +19,7 @@
         <div class="price-button-div">
 
           <div>
-          <h2>€<%= @material.price %></h2>
+          <h2><%= humanized_money_with_symbol(@material.price) %></h2>
           </div>
 
           <div>
