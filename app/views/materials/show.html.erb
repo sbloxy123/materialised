@@ -1,4 +1,4 @@
-<div>
+<div class="materials-show-flex">
   <div class="flex-container-two margin-container-one-show">
     <div class="first-div-show">
       <h2><%= @material.name.capitalize %></h2>
@@ -44,6 +44,9 @@
   </div>
 
   <div class="margin-container-two-show">
+    <% @basket_items.each do |item| %>
+    <p><%= item.material.name %></p>
 
+    <% end %>
   </div>
 </div>
