@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
 
     # @order.driver = @driver
     @order.driver_id = 1
+    @order.supplier_id = 1
     if @order.save
       redirect_to checkout_path(@order)
     else
@@ -25,6 +26,7 @@ class OrdersController < ApplicationController
 
   def show
     @drivers = Driver.all
+    @suppliers = Supplier.all
     @orders_all = Order.all
     @order = Order.find(params[:id])
     @markers = []
@@ -34,7 +36,15 @@ class OrdersController < ApplicationController
         lat: driver_coordinates.latitude,
         lng: driver_coordinates.longitude,
         info_window: render_to_string(partial: "info_window", locals: { driver: driver_coordinates }),
-        image_url: helpers.asset_url("icons/#{driver_coordinates.vehicle_type}.svg"),
+        image_url: helpers.asset_url("icons/#{driver_coordinates.vehicle_type}.png")
+      }
+    end
+    @markers << @suppliers.geocoded.map do |supplier_coordinates|
+      {
+        lat: supplier_coordinates.latitude,
+        lng: supplier_coordinates.longitude,
+        info_window: render_to_string(partial: "supplier_info_window", locals: { supplier: supplier_coordinates }),
+        image_url: helpers.asset_url("#{supplier_coordinates.image}.png")
       }
     end
     @markers = @markers.flatten
@@ -43,7 +53,8 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
-      redirect_to order_path
+      raise
+      redirect_to order_path(@order)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -52,6 +63,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:site_location, :order_id, :driver_id, :user_id)
+    params.require(:order).permit(:site_location, :order_id, :driver_id, :user_id, :supplier_id)
   end
 end

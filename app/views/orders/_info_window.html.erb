@@ -24,7 +24,8 @@
     </div>
     <div class="select-driver">
       <%= form_with model: @order do |form| %>
-        <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
+        <%= hidden_field_tag "order[driver_id]", driver.id %>
+        <%# <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
         <%= form.submit "Pick This Driver" %>
       <% end %>
     </div>

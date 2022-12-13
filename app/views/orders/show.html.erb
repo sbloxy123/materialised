@@ -24,13 +24,12 @@
   <%# </div> %>
 <%# </div> %>
 
-<h3>Pick a driver:</h3>
+  <h3>Pick a driver:</h3>
 
-<%= form_with model: @order do |form| %>
-  <div class="m-3">
-  <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
-  </div>
-  <%= form.submit "add driver" %>
+  <%= form_with model: @order do |form| %>
+    <div class="m-3">
+    <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
+    </div>
+    <%= form.submit "add driver" %>
 <% end %>
-<%= link_to "Pay now", orders_path %>
 </div>

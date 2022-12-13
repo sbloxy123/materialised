@@ -119,49 +119,49 @@ bricks_third.save!
 
 puts 'Suppliers...'
 wickes_one = Supplier.new(name: "Wickes", address: "40 Little Portland St
-  London, England", image: "wickes.png")
+  London, England", image: "Wickes")
 wickes_one.save!
 wickes_two = Supplier.new(name: "Wickes", address: "101 Fleet St
-  London, England", image: "wickes.png")
+  London, England", image: "Wickes")
 wickes_two.save!
 
 builders_depot_one = Supplier.new(name: "Builders Depot", address: "8 Thorney St
-  London, England", image: "builderdepot.png")
+  London, England", image: "Builders Depot")
 builders_depot_one.save!
 
 selco_builders_one = Supplier.new(name: "Selco Builders Warehouse", address: "20 Wren St
-  London, England", image: "selco.jpeg")
+  London, England", image: "Selco Builders Warehouse")
 selco_builders_one.save!
 selco_builders_two = Supplier.new(name: "Selco Builders Warehouse", address: "1 Wenlock St
-  London, England", image: "selco.jpeg")
+  London, England", image: "Selco Builders Warehouse")
 selco_builders_two.save!
 
 jewsons_one = Supplier.new(name: "Jewsons", address: "212 A1200
-  London, England", image: "jewsons.png")
+  London, England", image: "Jewsons")
 jewsons_one.save!
-jewsons_two = Supplier.new(name: "Jewsons", address: "8 Carlton Gardens
-  London, England", image: "jewsons.png")
+jewsons_two = Supplier.new(name: "Jewsons", address: "Mayfair
+  London, England", image: "Jewsons")
 jewsons_two.save!
 
 travis_perkins_one = Supplier.new(name: "Travis Perkins", address: "Weaver St
-  London, England", image: "travisperkins.png")
+  London, England", image: "Travis Perkins")
 travis_perkins_one.save!
 travis_perkins_two = Supplier.new(name: "Travis Perkins", address: "1 Bembridge Cl
-  London, England", image: "travisperkins.png")
+  London, England", image: "Travis Perkins")
 travis_perkins_two.save!
 
 screwfix_one = Supplier.new(name: "Screwfix", address: "4 Bayham St
-  London, England", image: "screwfix.png")
+  London, England", image: "Screwfix")
 screwfix_one.save!
 screwfix_two = Supplier.new(name: "Screwfix", address: "9 Princess Rd
-  London, England", image: "screwfix.png")
+  London, England", image: "Screwfix")
 screwfix_two.save!
 
 toolstation_one = Supplier.new(name: "Toolstation", address: "55 Library St
-  London, England", image: "toolstation.png")
+  London, England", image: "Toolstation")
 toolstation_one.save!
 toolstation_two = Supplier.new(name: "Toolstation", address: "17 St Mary Axe
-  London, England", image: "toolstation.png")
+  London, England", image: "Toolstation")
 toolstation_two.save!
 
 puts 'Finished!'
