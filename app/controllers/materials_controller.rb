@@ -12,7 +12,7 @@ class MaterialsController < ApplicationController
     @material = Material.find(params[:id])
     @basket = Basket.new
     @order = current_user.orders.last # TO-DO: Fix last with pending order
-    @basket_items = @order.baskets
+    # @basket_items = @order.baskets
   end
 
   private

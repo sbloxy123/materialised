@@ -12,13 +12,15 @@ class BasketsController < ApplicationController
     @the_user = current_user
     @basket = Basket.new(basket_params)
 
+
     if current_user.order_ids.length < 1
       @order = Order.new
       @order.user = current_user
       @order.state = "pending"
-      @order.amount_cents = @material.price_cents * @basket.quantity
-      @order.save
+      @order.amount_cents = (@material.price_cents * @basket.quantity) + ((@material.price_cents * @basket.quantity) / 20.to_f)
       @basket.order = @order
+      @order.save
+
 
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
@@ -27,7 +29,7 @@ class BasketsController < ApplicationController
             unit_amount: @material.price_cents,
             currency: 'eur',
             product_data: {
-              name: @material.name
+              name: @material.name,
             }
           },
           quantity: 1
@@ -44,7 +46,7 @@ class BasketsController < ApplicationController
       @order_id = current_user.order_ids.first
       @order = Order.find(@order_id)
       @basket.order = @order
-      @order.amount_cents = @order.amount_cents + (@material.price_cents * @basket.quantity)
+      @order.amount_cents = @order.amount_cents + (@material.price_cents * @basket.quantity) + ((@material.price_cents * @basket.quantity) / 20.to_f)
       @order.save
 
       session = Stripe::Checkout::Session.create(
@@ -54,7 +56,7 @@ class BasketsController < ApplicationController
             unit_amount: @order.amount_cents,
             currency: 'eur',
             product_data: {
-              name: @material.name
+              name: @material.name,
             }
           },
           quantity: 1
