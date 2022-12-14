@@ -1,0 +1,5 @@
+meta_product_name: "Materialize"
+meta_title: "Materialize - Construction Materials Delivered, same day"
+meta_description: "Order construction materials for same day delivery"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
