@@ -65,6 +65,8 @@ group :development, :test do
   gem "dotenv-rails"
 end
 gem "geocoder"
+gem 'turf-ruby'
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]

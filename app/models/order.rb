@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :driver, optional: true
   belongs_to :user
-  belongs_to :supplier
+  belongs_to :supplier, optional: true
   has_many :baskets, dependent: :destroy
 
   monetize :amount_cents

@@ -27,7 +27,7 @@ puts 'users...'
 # order_third.save!
 
 puts 'Drivers...'
-driver_one = Driver.new(name: "Tim", location: "Lambeth, London", vehicle_type: "Large truck", driver_img: "31.jpeg", rating: 5)
+driver_one = Driver.new(name: "Tim", location: "Bloomsbury, London", vehicle_type: "Large truck", driver_img: "31.jpeg", rating: 5)
 driver_one.save!
 driver_second = Driver.new(name: "William", location: "Temple, London", vehicle_type: "Van", driver_img: "daa.jpeg", rating: 4)
 driver_second.save!
@@ -37,9 +37,9 @@ driver_fourth = Driver.new(name: "Alex", location: "Harley St, London", vehicle_
 driver_fourth.save!
 driver_fifth = Driver.new(name: "Peter", location: "St James's Square, London", vehicle_type: "Large truck", driver_img: "erf.png", rating: 2)
 driver_fifth.save!
-driver_sixth = Driver.new(name: "Paul", location: "Old Brompton Rd, London", vehicle_type: "Motorbike", driver_img: "images.jpeg", rating: 5)
+driver_sixth = Driver.new(name: "Paul", location: "Kings Cross, London", vehicle_type: "Motorbike", driver_img: "images.jpeg", rating: 5)
 driver_sixth.save!
-driver_seventh = Driver.new(name: "Greg", location: "Westminster, London", vehicle_type: "Large truck", driver_img: "man.jpeg", rating: 4)
+driver_seventh = Driver.new(name: "Greg", location: "Padington, London", vehicle_type: "Large truck", driver_img: "man.jpeg", rating: 4)
 driver_seventh.save!
 driver_eigth = Driver.new(name: "Ryan", location: "Rawlings St, London", vehicle_type: "Van", driver_img: "pic.png", rating: 3)
 driver_eigth.save!
@@ -59,9 +59,9 @@ construction_second = Material.new(name: "Angle Bracket", category: "Constructio
 construction_second.save!
 construction_third = Material.new(name: "PTG Floorboards", category: "Construction", description: "Solid traditional softwood planed floorboards with a tongue and groove finish. Produced from slow-grown trees and kiln-dried for improved stability.", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_jpg,h_2250,q_auto:good,w_2250/c_pad,h_2250,w_2250/v1/products/wickes/GPID_5000028390_00?pgw=1&pgwact=1")
 construction_third.save!
-construction_fourth = Material.new Material.new(name: " Non-Structural Hardwood Plywood", category: "Construction", description: "The Non-Structural Hardwood Plywood is a versatile non-structural building board with a smooth sanded surface. Designed to resist warping and bending.", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), image: "https://expresszuschnitt.de/media/image/product/25050/lg/spanplatten-bardolino-sonoma-eiche.jpg")
+construction_fourth = Material.new(name: " Non-Structural Hardwood Plywood", category: "Construction", description: "The Non-Structural Hardwood Plywood is a versatile non-structural building board with a smooth sanded surface. Designed to resist warping and bending.", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), image: "https://expresszuschnitt.de/media/image/product/25050/lg/spanplatten-bardolino-sonoma-eiche.jpg")
 construction_fourth.save!
-construction_fifth = Material.new Material.new(name: "White Furniture Panel", category: "Construction", description: "A furniture grade product which is ideal for use as shelving or carcasses in kitchens or bedroom.", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), image: "https://www.abuiltmy.com/image/cache/abd/1813944-600x667.jpg")
+construction_fifth = Material.new(name: "White Furniture Panel", category: "Construction", description: "A furniture grade product which is ideal for use as shelving or carcasses in kitchens or bedroom.", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), image: "https://www.abuiltmy.com/image/cache/abd/1813944-600x667.jpg")
 construction_fifth.save!
 
 plumbing_first = Material.new(name: "Copper Pipe", category: "Plumbing & Heating", description: "Copper pipework is highly durable, easy to work with and to install. It is corrosion and ultraviolet resistant, has excellent thermal conductivity, and is antimicrobia, making it impossible for bacteria to grow", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), image: "https://mobileimages.lowes.com/productimages/21e9fbab-f916-4dc6-b2ac-fda170d06b1f/15583962.jpg")
@@ -72,7 +72,7 @@ plumbing_third = Material.new(name: "Tower Heater", category: "Plumbing & Heatin
 plumbing_third.save!
 plumbing_fourth = Material.new(name: "Tap Kit", category: "Plumbing & Heating", description: "The kit contains all the necessary components to fit an external tap linking to an inside supply pipe without having to cut off the water supply.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), image: "https://media.wickes.co.uk/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_jpg,h_2250,q_auto:good,w_2250/c_pad,h_2250,w_2250/v1/products/wickes/C7322_420000_00?pgw=1&pgwact=1")
 plumbing_fourth.save!
-plumbing_fifth = Material.new(name: "Combi Boiler- 30kW", category: "Plumbing & Heating", description: "Complete with domestic hot water temperature controls including a switched preheat function, mechanical built-in timer and a digital operating status & diagnostic display, the Exclusive provides reliable control of the home’s heating and hot water performance..", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), image: "https://media.wickes.co.uk/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_jpg,h_2250,q_auto:good,w_2250/c_pad,h_2250,w_2250/v1/products/wickes/C7322_420000_00?pgw=1&pgwact=1")
+plumbing_fifth = Material.new(name: "Combi Boiler- 30kW", category: "Plumbing & Heating", description: "Complete with domestic hot water temperature controls including a switched preheat function, mechanical built-in timer and a digital operating status & diagnostic display, the Exclusive provides reliable control of the home’s heating and hot water performance..", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), image: "https://media.wickes.co.uk/is/image/wickes/GPID_1100623145_00?$normal$")
 plumbing_fifth.save!
 
 gardens_first = Material.new(name: "Fence Panel", category: "Gardens & Landscaping", description: "The DuraPost Sepia Brown/Natural Vento Vertical Composite Fence Panel is a stylish, durable, and easy to install fence panel option. DuraPost Vento panels are made from up to 70% recycled materials, so they are more durable than other materials on the market, and they're also more environmentally friendly.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), image: "https://media.wickes.co.uk/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_jpg,h_2250,q_auto:good,w_2250/c_pad,h_2250,w_2250/v1/products/wickes/L1641_540052_00?pgw=1&pgwact=1")
@@ -83,7 +83,7 @@ gardens_third = Material.new(name: "Charcoal BBQ", category: "Gardens & Landscap
 gardens_third.save!
 gardens_fourth = Material.new(name: " Round Cantilever Garden Parasol", category: "Gardens & Landscaping", description: "Make the most of the outdoors on warm sunny days, with this premium 3.5m banana parasol, perfect for keeping you protected from the sun. Designed with an extra-large canopy, this stylish and freestanding parasol can be used anywhere in the garden.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), image: "https://media.wickes.co.uk/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_jpg,h_1500,q_auto:good,w_1500/c_pad,h_1500,w_1500/v1/products/wickes/GPID_1100647698_00?pgw=1&pgwact=1")
 gardens_fourth.save!
-gardens_fifth = Material.new(name: "Paving Slab ", category: "Gardens & Landscaping", description: "Utility slabs, functional and durable. Perfect for shed bases and edging around your greenhouse. These slabs are not recommended for decorative patios.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), image: "https://pictureserver.net/images/pic/25/a2/undef_src_sa_picid_816053_x_760_type_whitesh_image.jpg?ver=34")
+gardens_fifth = Material.new(name: "Paving Slab ", category: "Gardens & Landscaping", description: "Utility slabs, functional and durable. Perfect for shed bases and edging around your greenhouse. These slabs are not recommended for decorative patios.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(1..100), image: "https://media.wickes.co.uk/is/image/wickes/M3549_144651_00?$normal$")
 gardens_fifth.save!
 
 tools_first = Material.new(name: "Hammer Drill", category: "Tools", description: "Brushless Hammer Drill Driver is a powerful heavy duty drill that is ultra-compact. The Brushless motor delivers reduced friction and better runtime which enables more power to be delivered during application. This results in less wear and an increase in longevity of the tool.", price: rand(10..100), length: rand(10..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wuerth.com/source/eshop/stmedia/wuerth/images/std.lang.all/resolutions/category/800px/754309.jpg")
