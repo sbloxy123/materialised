@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
         lat: supplier_coordinates.latitude,
         lng: supplier_coordinates.longitude,
         info_window: render_to_string(partial: "supplier_info_window", locals: { supplier: supplier_coordinates }),
-        image_url: helpers.asset_url("#{supplier_coordinates.image}.png")
+        image_url: supplier_coordinates.image
       }
     # end
     end
