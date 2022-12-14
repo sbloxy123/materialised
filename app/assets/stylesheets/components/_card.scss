@@ -63,3 +63,15 @@ p{
 .category-card-size{
   flex-basis: 20%;
 }
+
+.view-details{
+  background-color: #ECECEC;
+  border: 1px solid #c5c4c4;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.view-details:hover{
+  background-color: #dcd9d9;
+  border: 1px solid #bbbaba;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
