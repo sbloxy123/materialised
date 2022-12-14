@@ -41,7 +41,7 @@ body {
 .details-div {
   margin-left: 25px;
   background-color: white;
-  width: 900px;
+  width: 1000px;
   max-height: 400px;
 
   h2 {
@@ -53,10 +53,16 @@ body {
 
 .details-again-div {
   background-color: white;
+  max-height: 200px;
 
   p {
    height: 200px;
    margin-left: 30px;
+   margin-top: 10px;
+  }
+
+  h2 {
+    margin-left: 30px;
   }
 }
 
