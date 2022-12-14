@@ -27,21 +27,21 @@ puts 'users...'
 # order_third.save!
 
 puts 'Drivers...'
-driver_one = Driver.new(name: "Tim", location: "Bloomsbury, London", vehicle_type: "Large truck", driver_img: "31.jpeg", rating: 5)
+driver_one = Driver.new(name: "Tim", location: "Bloomsbury, London", vehicle_type: "Large truck", driver_img: "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg", rating: 5)
 driver_one.save!
-driver_second = Driver.new(name: "William", location: "Temple, London", vehicle_type: "Van", driver_img: "daa.jpeg", rating: 4)
+driver_second = Driver.new(name: "William", location: "Temple, London", vehicle_type: "Van", driver_img: "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/social-media-profile-photos-8.jpg", rating: 4)
 driver_second.save!
 driver_third = Driver.new(name: "Bill", location: "Canonbury Rd, London", vehicle_type: "Motorbike", driver_img: "chap.jpeg", rating: 3)
 driver_third.save!
 driver_fourth = Driver.new(name: "Alex", location: "Harley St, London", vehicle_type: "Van", driver_img: "ddd.webp", rating: 3)
 driver_fourth.save!
-driver_fifth = Driver.new(name: "Peter", location: "St James's Square, London", vehicle_type: "Large truck", driver_img: "erf.png", rating: 2)
+driver_fifth = Driver.new(name: "Peter", location: "St James's Square, London", vehicle_type: "Large truck", driver_img: "https://www.mensjournal.com/wp-content/uploads/mf/1280-selfie.jpg?w=900&quality=86&strip=all", rating: 2)
 driver_fifth.save!
-driver_sixth = Driver.new(name: "Paul", location: "Kings Cross, London", vehicle_type: "Motorbike", driver_img: "images.jpeg", rating: 5)
+driver_sixth = Driver.new(name: "Paul", location: "Kings Cross, London", vehicle_type: "Motorbike", driver_img: "https://www.upwork.com/mc/documents/Photo-4.jpg", rating: 5)
 driver_sixth.save!
-driver_seventh = Driver.new(name: "Greg", location: "Padington, London", vehicle_type: "Large truck", driver_img: "man.jpeg", rating: 4)
+driver_seventh = Driver.new(name: "Greg", location: "Padington, London", vehicle_type: "Large truck", driver_img: "https://media.licdn.com/dms/image/C4D03AQGF_hAcouEUBQ/profile-displayphoto-shrink_800_800/0/1540491257720?e=1676505600&v=beta&t=QqKSreWBqPQXvpLlA6XpITZEzskr9_FpEPZFLBJGfio", rating: 4)
 driver_seventh.save!
-driver_eigth = Driver.new(name: "Ryan", location: "Rawlings St, London", vehicle_type: "Van", driver_img: "pic.png", rating: 3)
+driver_eigth = Driver.new(name: "Ryan", location: "Rawlings St, London", vehicle_type: "Van", driver_img: "https://media.licdn.com/dms/image/C4D03AQE7Bgy-mSdG2w/profile-displayphoto-shrink_800_800/0/1571387154959?e=1676505600&v=beta&t=bdvMO48Lgeig2kWR28ppfg5h5Ns7P3jlffx1ht9ee9k", rating: 3)
 driver_eigth.save!
 
 
