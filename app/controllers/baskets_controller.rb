@@ -32,7 +32,7 @@ class BasketsController < ApplicationController
             unit_amount: @material.price_cents,
             currency: 'eur',
             product_data: {
-              name: @material.name,
+              name: "Total amount:",
             }
           },
           quantity: 1
@@ -59,7 +59,7 @@ class BasketsController < ApplicationController
             unit_amount: @order.amount_cents,
             currency: 'eur',
             product_data: {
-              name: @material.name,
+              name: "Total amount:",
             }
           },
           quantity: 1

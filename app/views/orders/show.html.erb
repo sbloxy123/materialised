@@ -36,7 +36,9 @@
       <%= link_to "Pay now", orders_path, class: "orange-button" %>
   <%# </div> %>
 
-  <button id="pay" class="btn btn-primary mb-5">Pay</button>
+  <button onClick="window.location.reload()" class="btn btn-warning mb-5 mt-4">Confirm choices</button>
+
+  <button id="pay" class="btn btn-primary mb-5 mt-4">Pay</button>
 
         <script src="https://js.stripe.com/v3/"></script>
         <script>
