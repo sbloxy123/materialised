@@ -38,7 +38,7 @@ class BasketsController < ApplicationController
           quantity: 1
         }],
         mode: "payment",
-        success_url: order_url(@order),
+        success_url: orders_url,
         cancel_url: order_url(@order)
       )
 
@@ -65,7 +65,7 @@ class BasketsController < ApplicationController
           quantity: 1
         }],
         mode: "payment",
-        success_url: order_url(@order),
+        success_url: orders_url ,
         cancel_url: order_url(@order)
       )
 
@@ -78,7 +78,6 @@ class BasketsController < ApplicationController
     else
       # TODO: ADD ALERT RE UNSUCCESSFUL
     end
-
   end
   private
 
