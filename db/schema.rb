@@ -55,8 +55,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_134758) do
     t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "suppliers_id"
     t.string "image"
     t.integer "price_cents", default: 0, null: false
+    t.index ["suppliers_id"], name: "index_materials_on_suppliers_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -103,7 +105,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_134758) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
