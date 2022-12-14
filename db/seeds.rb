@@ -54,7 +54,7 @@ driver_eigth.save!
 # Order_materials.save!
 
 puts 'materials...'
-# puts 3.times do
+# puts 5.times do
 construction_first = Material.new(name: "Studwork CLS Timber", category: "Construction", description: "C16 graded structural timber perfect for use in stud wall timber partitions and many other framing projects. Planed surfaces with eased corners to provide a precision finish.", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), image: "https://media.wickes.co.uk/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_jpg,h_1500,q_auto:good,w_1500/c_pad,h_1500,w_1500/v1/products/wickes/S3308_107177_00?pgw=1&pgwact=1")
 construction_first.save!
 construction_second = Material.new(name: "Angle Bracket", category: "Construction", description: "Angle brackets for multi-purpose connections.", price: rand(10..100), length: rand(1..100), width: rand(10..100), weight: rand(10..100), image: "https://www.e-rigging.com/assets/images/p/4482/SS-Angle-Bracket-31mm.jpg")
