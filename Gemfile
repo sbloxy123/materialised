@@ -53,6 +53,7 @@ gem "faker"
 
 gem 'money-rails', '~>1.12'
 gem 'stripe'
+gem 'stripe_event'
 
 # gem 'bootstrap-sass'
 gem "devise"
