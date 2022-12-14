@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
     end
   end
 
+
   def show
     @drivers = Driver.all
     @suppliers = Supplier.all

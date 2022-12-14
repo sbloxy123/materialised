@@ -11,7 +11,7 @@ class MaterialsController < ApplicationController
 
   def show
     @material = Material.find(params[:id])
-    @category = Material.where(category: @material.category)
+    @category = Material.where.not(id: @material).where(category: @material.category).limit(3)
     @basket = Basket.new
     # @order = current_user.orders.last # TO-DO: Fix last with pending order
     # @basket_items = @order.baskets

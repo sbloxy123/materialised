@@ -13,6 +13,7 @@
         <div class="details-again-div">
 
           <p><%= @material.description %></p>
+
         </div>
 
         <div class="price-button-div">
@@ -24,7 +25,7 @@
           <div>
             <%= simple_form_for @basket do |f| %>
               <%= hidden_field_tag :material, @material.id %>
-              <%= f.input :quantity, input_html: { type: 'number' } %>
+              <%= f.input :quantity, input_html: { type: 'number' }, required: true  %>
               <button type="submit" class="cart-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add To Basket <i class="fa-solid fa-basket-shopping"></i></button>
               <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg text-center">
@@ -60,7 +61,7 @@
                             <h6 class="modal-heading"><%= item.name %></h6>
                           </div>
                           <div>
-                            <h6>£<%= item.price %></h6>
+                            <h6 modal-price >£<%= item.price %></h6>
                           </div>
                         </div>
                         <% end %>
@@ -93,3 +94,5 @@
     </div>
 
   </div>
+
+
