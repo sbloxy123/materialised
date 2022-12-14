@@ -54,7 +54,7 @@
           </div>
           <div>
             <p class="mt-2">£<%=@materials.find(item.material_id).price %></p>
-            <%= link_to "View details", material_path(item.material_id) %>
+            <%= link_to "View details", material_path(item.material_id), class: "btn view-details mb-3" %>
           </div>
         </div>
 
