@@ -31,9 +31,9 @@ driver_one = Driver.new(name: "Tim", location: "Bloomsbury, London", vehicle_typ
 driver_one.save!
 driver_second = Driver.new(name: "William", location: "Temple, London", vehicle_type: "Van", driver_img: "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/social-media-profile-photos-8.jpg", rating: 4)
 driver_second.save!
-driver_third = Driver.new(name: "Bill", location: "Canonbury Rd, London", vehicle_type: "Motorbike", driver_img: "chap.jpeg", rating: 3)
+driver_third = Driver.new(name: "Bill", location: "Canonbury Rd, London", vehicle_type: "Motorbike", driver_img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80", rating: 3)
 driver_third.save!
-driver_fourth = Driver.new(name: "Alex", location: "Harley St, London", vehicle_type: "Van", driver_img: "ddd.webp", rating: 3)
+driver_fourth = Driver.new(name: "Alex", location: "Harley St, London", vehicle_type: "Van", driver_img: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80", rating: 3)
 driver_fourth.save!
 driver_fifth = Driver.new(name: "Peter", location: "St James's Square, London", vehicle_type: "Large truck", driver_img: "https://www.mensjournal.com/wp-content/uploads/mf/1280-selfie.jpg?w=900&quality=86&strip=all", rating: 2)
 driver_fifth.save!
