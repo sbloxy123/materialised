@@ -13,6 +13,8 @@ puts "Cleaning database..."
 Driver.destroy_all
 Material.destroy_all
 Supplier.destroy_all
+Order.destroy_all
+
 require 'faker'
 
 puts 'users...'
@@ -27,21 +29,21 @@ puts 'users...'
 # order_third.save!
 
 puts 'Drivers...'
-driver_one = Driver.new(name: "Tim", location: "Bloomsbury, London", vehicle_type: "Large truck", driver_img: "31.jpeg", rating: 5)
+driver_one = Driver.new(name: "Tim", location: "Bloomsbury, London", vehicle_type: "Large truck", driver_img: "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg", rating: 5)
 driver_one.save!
-driver_second = Driver.new(name: "William", location: "Temple, London", vehicle_type: "Van", driver_img: "daa.jpeg", rating: 4)
+driver_second = Driver.new(name: "William", location: "Temple, London", vehicle_type: "Van", driver_img: "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/social-media-profile-photos-8.jpg", rating: 4)
 driver_second.save!
-driver_third = Driver.new(name: "Bill", location: "Canonbury Rd, London", vehicle_type: "Motorbike", driver_img: "chap.jpeg", rating: 3)
+driver_third = Driver.new(name: "Bill", location: "Canonbury Rd, London", vehicle_type: "Motorbike", driver_img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80", rating: 3)
 driver_third.save!
-driver_fourth = Driver.new(name: "Alex", location: "Harley St, London", vehicle_type: "Van", driver_img: "ddd.webp", rating: 3)
+driver_fourth = Driver.new(name: "Alex", location: "Harley St, London", vehicle_type: "Van", driver_img: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80", rating: 3)
 driver_fourth.save!
-driver_fifth = Driver.new(name: "Peter", location: "St James's Square, London", vehicle_type: "Large truck", driver_img: "erf.png", rating: 2)
+driver_fifth = Driver.new(name: "Peter", location: "St James's Square, London", vehicle_type: "Large truck", driver_img: "https://www.mensjournal.com/wp-content/uploads/mf/1280-selfie.jpg?w=900&quality=86&strip=all", rating: 2)
 driver_fifth.save!
-driver_sixth = Driver.new(name: "Paul", location: "Kings Cross, London", vehicle_type: "Motorbike", driver_img: "images.jpeg", rating: 5)
+driver_sixth = Driver.new(name: "Paul", location: "Kings Cross, London", vehicle_type: "Motorbike", driver_img: "https://www.upwork.com/mc/documents/Photo-4.jpg", rating: 5)
 driver_sixth.save!
-driver_seventh = Driver.new(name: "Greg", location: "Padington, London", vehicle_type: "Large truck", driver_img: "man.jpeg", rating: 4)
+driver_seventh = Driver.new(name: "Greg", location: "Padington, London", vehicle_type: "Large truck", driver_img: "https://media.licdn.com/dms/image/C4D03AQGF_hAcouEUBQ/profile-displayphoto-shrink_800_800/0/1540491257720?e=1676505600&v=beta&t=QqKSreWBqPQXvpLlA6XpITZEzskr9_FpEPZFLBJGfio", rating: 4)
 driver_seventh.save!
-driver_eigth = Driver.new(name: "Ryan", location: "Rawlings St, London", vehicle_type: "Van", driver_img: "pic.png", rating: 3)
+driver_eigth = Driver.new(name: "Ryan", location: "Rawlings St, London", vehicle_type: "Van", driver_img: "https://media.licdn.com/dms/image/C4D03AQE7Bgy-mSdG2w/profile-displayphoto-shrink_800_800/0/1571387154959?e=1676505600&v=beta&t=bdvMO48Lgeig2kWR28ppfg5h5Ns7P3jlffx1ht9ee9k", rating: 3)
 driver_eigth.save!
 
 
@@ -143,49 +145,52 @@ painting_fifth.save!
 
 puts 'Suppliers...'
 wickes_one = Supplier.new(name: "Wickes", address: "40 Little Portland St
-  London, England", image: "Wickes")
+  London, England", image: "https://static-content.wickes.co.uk/wickes-css@2.64.0/build/img/wickes-logo.svg")
 wickes_one.save!
 wickes_two = Supplier.new(name: "Wickes", address: "101 Fleet St
-  London, England", image: "Wickes")
+  London, England", image: "https://static-content.wickes.co.uk/wickes-css@2.64.0/build/img/wickes-logo.svg")
 wickes_two.save!
 
 builders_depot_one = Supplier.new(name: "Builders Depot", address: "8 Thorney St
-  London, England", image: "Builders Depot")
+  London, England", image: "https://www.superfoil.co.uk/wp-content/uploads/2021/04/Builder-Depot.png")
 builders_depot_one.save!
 
 selco_builders_one = Supplier.new(name: "Selco Builders Warehouse", address: "20 Wren St
-  London, England", image: "Selco Builders Warehouse")
+  London, England", image: "https://yes-shecan.com/wp-content/uploads/2019/03/64d93d666355a43c4a86679a030d35b6.jpg")
 selco_builders_one.save!
 selco_builders_two = Supplier.new(name: "Selco Builders Warehouse", address: "1 Wenlock St
-  London, England", image: "Selco Builders Warehouse")
+  London, England", image: "https://yes-shecan.com/wp-content/uploads/2019/03/64d93d666355a43c4a86679a030d35b6.jpg")
 selco_builders_two.save!
 
 jewsons_one = Supplier.new(name: "Jewsons", address: "212 A1200
-  London, England", image: "Jewsons")
+  London, England", image: "https://www.labc.co.uk/sites/default/files/content/jewson_0.jpg")
 jewsons_one.save!
 jewsons_two = Supplier.new(name: "Jewsons", address: "Mayfair
-  London, England", image: "Jewsons")
+  London, England", image: "https://www.labc.co.uk/sites/default/files/content/jewson_0.jpg")
 jewsons_two.save!
 
 travis_perkins_one = Supplier.new(name: "Travis Perkins", address: "Weaver St
-  London, England", image: "Travis Perkins")
+  London, England", image: "https://k-10.co.uk/wp-content/uploads/2019/11/TravisPerkins-Logo-18-728x386.jpg")
 travis_perkins_one.save!
 travis_perkins_two = Supplier.new(name: "Travis Perkins", address: "1 Bembridge Cl
-  London, England", image: "Travis Perkins")
+  London, England", image: "https://k-10.co.uk/wp-content/uploads/2019/11/TravisPerkins-Logo-18-728x386.jpg")
 travis_perkins_two.save!
 
 screwfix_one = Supplier.new(name: "Screwfix", address: "4 Bayham St
-  London, England", image: "Screwfix")
+  London, England", image: "https://cdn-fsly.yottaa.net/581cc04d2bb0ac43a7000195/www.screwfix.com/v~4b.4a7/assets/gfx/branding/screwfix-logo.svg?yocs=5_")
 screwfix_one.save!
 screwfix_two = Supplier.new(name: "Screwfix", address: "9 Princess Rd
-  London, England", image: "Screwfix")
+  London, England", image: "https://cdn-fsly.yottaa.net/581cc04d2bb0ac43a7000195/www.screwfix.com/v~4b.4a7/assets/gfx/branding/screwfix-logo.svg?yocs=5_")
 screwfix_two.save!
 
 toolstation_one = Supplier.new(name: "Toolstation", address: "55 Library St
-  London, England", image: "Toolstation")
+  London, England", image: "https://www.toolstation.com/img/toolstation-halo.svg")
 toolstation_one.save!
 toolstation_two = Supplier.new(name: "Toolstation", address: "17 St Mary Axe
-  London, England", image: "Toolstation")
+  London, England", image: "https://www.toolstation.com/img/toolstation-halo.svg")
 toolstation_two.save!
 
+puts 'Order...'
+order = Order.new(user_id: 1, driver_id: Driver.first.id, supplier_id: Supplier.first.id)
+order.save!
 puts 'Finished!'
