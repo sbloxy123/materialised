@@ -13,6 +13,8 @@ puts "Cleaning database..."
 Driver.destroy_all
 Material.destroy_all
 Supplier.destroy_all
+Order.destroy_all
+
 require 'faker'
 
 puts 'users...'
@@ -143,49 +145,52 @@ painting_fifth.save!
 
 puts 'Suppliers...'
 wickes_one = Supplier.new(name: "Wickes", address: "40 Little Portland St
-  London, England", image: "Wickes")
+  London, England", image: "https://static-content.wickes.co.uk/wickes-css@2.64.0/build/img/wickes-logo.svg")
 wickes_one.save!
 wickes_two = Supplier.new(name: "Wickes", address: "101 Fleet St
-  London, England", image: "Wickes")
+  London, England", image: "https://static-content.wickes.co.uk/wickes-css@2.64.0/build/img/wickes-logo.svg")
 wickes_two.save!
 
 builders_depot_one = Supplier.new(name: "Builders Depot", address: "8 Thorney St
-  London, England", image: "Builders Depot")
+  London, England", image: "https://www.superfoil.co.uk/wp-content/uploads/2021/04/Builder-Depot.png")
 builders_depot_one.save!
 
 selco_builders_one = Supplier.new(name: "Selco Builders Warehouse", address: "20 Wren St
-  London, England", image: "Selco Builders Warehouse")
+  London, England", image: "https://yes-shecan.com/wp-content/uploads/2019/03/64d93d666355a43c4a86679a030d35b6.jpg")
 selco_builders_one.save!
 selco_builders_two = Supplier.new(name: "Selco Builders Warehouse", address: "1 Wenlock St
-  London, England", image: "Selco Builders Warehouse")
+  London, England", image: "https://yes-shecan.com/wp-content/uploads/2019/03/64d93d666355a43c4a86679a030d35b6.jpg")
 selco_builders_two.save!
 
 jewsons_one = Supplier.new(name: "Jewsons", address: "212 A1200
-  London, England", image: "Jewsons")
+  London, England", image: "https://www.labc.co.uk/sites/default/files/content/jewson_0.jpg")
 jewsons_one.save!
 jewsons_two = Supplier.new(name: "Jewsons", address: "Mayfair
-  London, England", image: "Jewsons")
+  London, England", image: "https://www.labc.co.uk/sites/default/files/content/jewson_0.jpg")
 jewsons_two.save!
 
 travis_perkins_one = Supplier.new(name: "Travis Perkins", address: "Weaver St
-  London, England", image: "Travis Perkins")
+  London, England", image: "https://k-10.co.uk/wp-content/uploads/2019/11/TravisPerkins-Logo-18-728x386.jpg")
 travis_perkins_one.save!
 travis_perkins_two = Supplier.new(name: "Travis Perkins", address: "1 Bembridge Cl
-  London, England", image: "Travis Perkins")
+  London, England", image: "https://k-10.co.uk/wp-content/uploads/2019/11/TravisPerkins-Logo-18-728x386.jpg")
 travis_perkins_two.save!
 
 screwfix_one = Supplier.new(name: "Screwfix", address: "4 Bayham St
-  London, England", image: "Screwfix")
+  London, England", image: "https://cdn-fsly.yottaa.net/581cc04d2bb0ac43a7000195/www.screwfix.com/v~4b.4a7/assets/gfx/branding/screwfix-logo.svg?yocs=5_")
 screwfix_one.save!
 screwfix_two = Supplier.new(name: "Screwfix", address: "9 Princess Rd
-  London, England", image: "Screwfix")
+  London, England", image: "https://cdn-fsly.yottaa.net/581cc04d2bb0ac43a7000195/www.screwfix.com/v~4b.4a7/assets/gfx/branding/screwfix-logo.svg?yocs=5_")
 screwfix_two.save!
 
 toolstation_one = Supplier.new(name: "Toolstation", address: "55 Library St
-  London, England", image: "Toolstation")
+  London, England", image: "https://www.toolstation.com/img/toolstation-halo.svg")
 toolstation_one.save!
 toolstation_two = Supplier.new(name: "Toolstation", address: "17 St Mary Axe
-  London, England", image: "Toolstation")
+  London, England", image: "https://www.toolstation.com/img/toolstation-halo.svg")
 toolstation_two.save!
 
+puts 'Order...'
+order = Order.new(user_id: 1, driver_id: Driver.first.id, supplier_id: Supplier.first.id)
+order.save!
 puts 'Finished!'
