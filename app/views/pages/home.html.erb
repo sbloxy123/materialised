@@ -2,15 +2,16 @@
 <div class="home-flex-container">
 
   <div class="first-div">
-    <div class="header-one-div">
-      <h1> Construction materials delivered same day, with a promise</h1>
+  <div class="d-flex">
+    <div class="header-one-div mt-4">
+      <h1> Construction materials delivered same day, with a promise!</h1>
     </div>
-
+  </div>
     <div class="search-bar-button-div">
       <%= form_with url: materials_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "search-bar-home",
+          class: "search-bar-home me-2",
           placeholder: "SEARCH FOR PRODUCT OR CATEGORY..."
         %>
       <% end %>
@@ -20,30 +21,36 @@
     </div>
 
     <div class="header-two-p-div">
-      <h5>We Have Achieved This in  5 Years With HardWork.</h5>
+      <h4>We Have Achieved This in 5 Years With Hard Work.</h4>
       <p>Order in minutes & have same day delivery. Thousands of products from brands you know and trust.</p>
     </div>
 
   <div class= "text">
     <div class= "line">
-
-    <h3> 20k </h3>
-    <h5>Successful</h5>
-    <h5>same-day deliveries </h5>
-    <h5> in 2021</h5>
-    </div>
-     <div class= "line">
-    <h3> 5k </h3>
-    <h5>Drivers</h5>
-    <h5> Available</h5>
+      <h3> 20k </h3>
+      <h5>Successful</h5>
+      <h5>same-day deliveries </h5>
+      <h5> in 2021</h5>
     </div>
     <div class= "line">
+      <h3> 5k </h3>
+      <h5>Drivers</h5>
+      <h5> Available</h5>
+    </div>
+    <div class= "line">
+
     <h3>500 plus</h3>
     <h5>Locations </h5>
     <h5>Served</h5>
+
+      <h3>500+</h3>
+      <h5>Locations </h5>
+      <h5>Served</h5>
+
     </div>
   </div>
   </div>
+
 
   <%# <div class="third-div">
     <%= image_tag "complete.png", class: "truck-image" %>
@@ -54,6 +61,17 @@
 <div class="process-image">
 
 </div>
+
+
+  <%= image_tag "annualexcellence", height: 180, class:"excelence-img" %>
+
+
+</div>
+
+<div class="process-image">
+
+</div>
+
 
 <div class="container justify-content-center align-items-center text-center">
   <h2>Categories</h2>
