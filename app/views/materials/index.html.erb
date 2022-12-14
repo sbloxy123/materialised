@@ -2,7 +2,7 @@
   <%= form_with url: materials_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control me-5 search-color",
+      class: "form-control me-3 search-color",
       placeholder: "Find materials"
     %>
     <%= submit_tag "Search", class: "btn orange-button" %>

@@ -1,14 +1,15 @@
 <div class=".mapboxgl-popup">
   <%# <div class="mapboxgl-popup-content"> %>
-    <div class="d-flex">
-      <%= image_tag supplier.image, height: 40 %>
-
-    </div>
-    <div class="select-driver">
-      <%= form_with model: @order do |form| %>
-        <%= hidden_field_tag "order[supplier_id]", supplier.id %>
-        <%# <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
-        <%= form.submit "Pick This Supplier" %>
-      <% end %>
+    <div class="p-1">
+      <div class="pb-2">
+        <%= image_tag supplier.image, height: 40 %>
+      </div>
+      <div class="select-driver">
+        <%= form_with model: @order do |form| %>
+          <%= hidden_field_tag "order[supplier_id]", supplier.id %>
+          <%# <%= form.collection_radio_buttons :driver_id, Driver.order(:name), :id, :name %>
+          <%= form.submit "Pick This Supplier" %>
+        <% end %>
+      </div>
     </div>
 </div>
