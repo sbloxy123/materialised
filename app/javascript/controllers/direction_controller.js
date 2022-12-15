@@ -21,7 +21,7 @@ export default class extends Controller {
 
   }
   #addDirectionsToMap(){
-    console.log(this.markersValue)
+    // console.log(this.markersValue)
     const coordinates = this.markersValue.map((marker) => {
       // console.log(marker, "marker")
       return marker.lng + "," + marker.lat + ";"
@@ -38,9 +38,8 @@ export default class extends Controller {
       })
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         const newData = data.routes[0];
-        console.log(newData.duration)
         const route = newData.geometry.coordinates;
         const geojson = {
           type: 'Feature',
@@ -74,6 +73,10 @@ export default class extends Controller {
             }
           });
         }
+        const time = Math.floor(
+          newData.duration / 60) + 30;
+        document.getElementById("time").innerHTML = time
+
   // add turn instructions here at the end
       })
   }
