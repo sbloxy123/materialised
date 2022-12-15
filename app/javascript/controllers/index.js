@@ -7,6 +7,9 @@ import { application } from "./application"
 import AddressAutocompleteController from "./address_autocomplete_controller"
 application.register("address-autocomplete", AddressAutocompleteController)
 
+import DirectionController from "./direction_controller"
+application.register("direction", DirectionController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

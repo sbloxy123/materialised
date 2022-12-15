@@ -1,7 +1,24 @@
 class OrdersController < ApplicationController
 
   def index
-
+    # driver
+    @order = current_user.orders.last
+    @markers = [
+      {
+        lat: @order.driver.latitude,
+        lng: @order.driver.longitude,
+        image_url: helpers.asset_url("icons/#{@order.driver.vehicle_type}.png")
+      },
+      {
+        lat: @order.supplier.latitude,
+        lng: @order.supplier.longitude,
+        image_url: @order.supplier.image
+      },
+      { lat: @order.latitude,
+        lng: @order.longitude,
+        image_url: helpers.asset_url("icons/construction.png")
+      }
+    ]
   end
 
   def new
