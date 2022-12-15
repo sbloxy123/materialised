@@ -123,13 +123,32 @@
 
 .process-image{
   width: 100%;
-  height: 600px;
+  height: 100vh;
   background-image: url("process.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size:contain;
   margin-top: 20px;
   z-index: -1;
+  height:100vh;
+}
+.tracking{
+  width:100%;
+  height:590px;
+
+
+
+   background-color:#225560;
+}
+.tracking-image{
+  background-image: url("tracking-with-text.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  width: 100%;
+  height: 450px;
 }
 
 .excelence-img { //please keep this css

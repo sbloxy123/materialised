@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="search-bar-button-div">
-        <%= form_with url: materials_path, method: :get do %>
+        <%= form_with url: materials_path, method: :get, html: { autocomplete: "off" }  do %>
           <%= text_field_tag :query,
             params[:query],
             class: "search-bar-home me-2",
@@ -51,23 +51,25 @@
   <%# <div class="third-div">
     <%= image_tag "complete.png", class: "truck-image" %>
   <%# </div> %>
-
-
-
-
 </div>
 
 <div class="process-image">
+</div>
 
+<div class ="tracking ">
+  <div class="container"><div class="tracking-image"></div></div>
 </div>
 
 <div class="container justify-content-center align-items-center text-center">
-  <h2>Categories</h2>
+
+  <h2 class="title-category">Categories</h2>
     <% categories = [] %>
     <% @materials.each do |material| %>
       <% categories << material.category %>
     <% end %>
     <% categories = categories.uniq %>
+    <% categories.sort! %>
+
 
 
     <div id="categories-grid" class="mb-5">
