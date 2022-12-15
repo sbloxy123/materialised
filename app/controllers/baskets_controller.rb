@@ -30,7 +30,7 @@ class BasketsController < ApplicationController
         line_items: [{
           price_data: {
             unit_amount: @material.price_cents,
-            currency: 'eur',
+            currency: 'gbp',
             product_data: {
               name: "Total amount:",
             }
@@ -57,7 +57,7 @@ class BasketsController < ApplicationController
         line_items: [{
           price_data: {
             unit_amount: @order.amount_cents,
-            currency: 'eur',
+            currency: 'gbp',
             product_data: {
               name: "Total amount:",
             }
