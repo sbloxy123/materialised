@@ -11,7 +11,7 @@
 
       <div class="details-div">
         <div class="details-again-div">
-          <h2><%= @material.name.capitalize %></h2>
+          <h2><%= @material.name %></h2>
           <p><%= @material.description %></p>
 
         </div>
@@ -19,7 +19,7 @@
         <div class="price-button-div">
 
           <div>
-          <h2><%= humanized_money_with_symbol(@material.price) %></h2>
+          <h2>£<%= @material.price.to_i %></h2>
           </div>
 
           <div>
@@ -38,8 +38,8 @@
                       <h6 class="modal-heading">Your item:</h6>
                       <div class="card-modal-no-shadow">
                         <p><%= image_tag @material.image, class: "material-image-modal" %></p>
-                        <h6 class="modal-heading"><%= @material.name.capitalize %></h6>
-                        <h6>£<%= @material.price %></h6>
+                        <h6 class="modal-heading"><%= @material.name %></h6>
+                        <h6>£<%= @material.price.to_i %></h6>
                       </div>
                       <% subtotal = 0 %>
                       <% @basket_items.each do |item| %>
@@ -61,7 +61,7 @@
                             <h6 class="modal-heading"><%= item.name %></h6>
                           </div>
                           <div>
-                            <h6 modal-price >£<%= item.price %></h6>
+                            <h6 modal-price >£<%= item.price.to_i %></h6>
                           </div>
                         </div>
                         <% end %>

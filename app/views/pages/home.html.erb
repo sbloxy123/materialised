@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="search-bar-button-div">
-        <%= form_with url: materials_path, method: :get do %>
+        <%= form_with url: materials_path, method: :get, html: { autocomplete: "off" }  do %>
           <%= text_field_tag :query,
             params[:query],
             class: "search-bar-home me-2",
@@ -45,29 +45,31 @@
     </div>
   </div>
 
-
-  <%= image_tag "annualexcellence", height: 180, class:"excelence-img" %>
+<%# BELOW - please keep the image tag with website address (allows heroku to work) %>
+  <%= image_tag "https://www.cipp.org.uk/static/0952842a-5e4d-4deb-8bd5d81eb2a0881f/260x161_highestquality__4a7c7e45a350/CIPP-Awards-2022-Logo.png", height: 180, class:"excelence-img" %>
 
   <%# <div class="third-div">
     <%= image_tag "complete.png", class: "truck-image" %>
   <%# </div> %>
-
-
-
-
 </div>
 
 <div class="process-image">
+</div>
 
+<div class ="tracking ">
+  <div class="container"><div class="tracking-image"></div></div>
 </div>
 
 <div class="container justify-content-center align-items-center text-center">
-  <h2>Categories</h2>
+
+  <h2 class="title-category">Categories</h2>
     <% categories = [] %>
     <% @materials.each do |material| %>
       <% categories << material.category %>
     <% end %>
     <% categories = categories.uniq %>
+    <% categories.sort! %>
+
 
 
     <div id="categories-grid" class="mb-5">
