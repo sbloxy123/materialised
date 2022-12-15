@@ -4,6 +4,10 @@
     gap: 50px;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 32px;
+}
+.title-category{
+  margin-top: 32px;
 }

@@ -51,18 +51,18 @@
   <%# <div class="third-div">
     <%= image_tag "complete.png", class: "truck-image" %>
   <%# </div> %>
-
-
-
-
 </div>
 
 <div class="process-image">
+</div>
 
+<div class ="tracking ">
+  <div class="container"><div class="tracking-image"></div></div>
 </div>
 
 <div class="container justify-content-center align-items-center text-center">
-  <h2>Categories</h2>
+
+  <h2 class="title-category">Categories</h2>
     <% categories = [] %>
     <% @materials.each do |material| %>
       <% categories << material.category %>
