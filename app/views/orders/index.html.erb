@@ -1,11 +1,19 @@
 
-
 <div class="container main-orders-show mt-5">
-  <div class="me-5">
-    <h2>Hooray! Your payment has been confirmed</h2>
-    <h4>The ETA for your materials is: 1hr 10 min</h4>
+  <div>
+    <div class="me-5">
+      <h2>Hooray! Your payment has been confirmed</h2>
+      <h4>The ETA for your materials is: 20 min</h4>
+    </div>
+    <%= image_tag "https://us.123rf.com/450wm/sevector/sevector2007/sevector200700107/sevector200700107.jpg?ver=6", class: "ms-7" %>
   </div>
 
+<div class="container mb-5 w-60">
+  <div style="width: 100%; height: 600px;"
+    data-controller="direction"
+    data-direction-markers-value="<%= @markers.to_json %>"
+    data-direction-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
 
-  <%= image_tag "https://us.123rf.com/450wm/sevector/sevector2007/sevector200700107/sevector200700107.jpg?ver=6", class: "ms-5" %>
 </div>
