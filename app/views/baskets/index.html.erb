@@ -53,7 +53,7 @@
           <p>Vehicle image and type</p>
           </div>
           <div>
-            <p class="mt-2">£<%=@materials.find(item.material_id).price %></p>
+            <p class="mt-2">£<%=@materials.find(item.material_id).price.to_i %></p>
             <%= link_to "View details", material_path(item.material_id), class: "btn view-details mb-3" %>
           </div>
         </div>
